@@ -1,0 +1,21 @@
+{
+  "name": "jrj-books-project",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Julianne Waters, Rebecca Lehew & Jennifer Engle",
+  "license": "",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js --ignore client",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build" 
+  },
+  "devDependencies": {
+    "cocurrently": "^5.3.0"
+  },
+  "dependencies": {
+    "node": "^20.1.0"
+  }
+}
