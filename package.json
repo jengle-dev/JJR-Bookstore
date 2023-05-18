@@ -13,7 +13,11 @@
         "build": "cd client && npm run build"
     },
     "dependencies": {
+        "@chakra-ui/react": "^2.6.1",
+        "@emotion/react": "^11.11.0",
+        "@emotion/styled": "^11.11.0",
         "concurrently": "^8.0.1",
+        "framer-motion": "^10.12.12",
         "node": "^20.1.0"
     }
 }
