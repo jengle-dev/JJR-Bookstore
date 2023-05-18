@@ -64,6 +64,7 @@ const SearchBooks = () => {
       const { items } = await response.json();
 
       const bookData = items.map((book) => ({
+        //need to return up to 10 kinds to get multiple book titles, a single ISBN will pull back multiple books - filter duplicate title and author
         bookId: book.id,
         authors: book.volumeInfo.authors || ['No author to display'],
         title: book.volumeInfo.title,
