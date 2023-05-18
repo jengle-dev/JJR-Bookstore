@@ -8,16 +8,19 @@
       "seed": "node seeds/seed.js",
       "watch": "nodemon server.js"
     },
+    "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-      "apollo-server-express": "^3.6.2",
-      "express": "^4.17.2",
-      "graphql": "^16.3.0",
-      "mongoose": "^7.0.2"
+      "bcrypt": "^5.0.0",
+      "express": "^4.17.1",
+      "graphql": "^15.5.0",
+      "jsonwebtoken": "^9.0.0",
+      "mongoose": "^7.0.2",   
+      "apollo-server-express": "^2.15.0",
+      "mongodb": "^5.5.0"
     },
     "devDependencies": {
-      "nodemon": "^2.0.6",
-      "concurrently": "^8.0.1"
+      "nodemon": "^2.0.6"
     }
   }
