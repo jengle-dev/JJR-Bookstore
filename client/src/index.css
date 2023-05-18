@@ -1,3 +1,14 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Barlow:wght@500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,500;0,700;1,400;1,600;1,700&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Roboto+Slab:wght@200;300;700&display=swap'); 
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Lora';
+  color: black;
+}
+
 :root {
   --ivoryGoddess: #F5EBE0;
   --ecruPrincess: #E3D5CA;
@@ -8,16 +19,102 @@
 
 };
 
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  font-size: 40px;
+  font-family: 'Libre Baskerville';
+  color: black;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  font-family: 'Amatic SC', cursive;
+  font-family: 'Barlow', sans-serif;
+  font-family: 'Libre Baskerville', serif;
+  font-family: 'Lora', serif;
+  font-family: 'Old Standard TT', serif;
+  font-family: 'Roboto Slab', serif;
+}
+
+ul,li{ 
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img, svg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+button {
+  outline: none;
+}
+.container {
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Smooth scroll */
+[data-scrollbar] {
+  height: 100vh;
+  overflow: hidden;
+  background-color: var(--taupeToad);
+  .scroll-content {
+    background-color: var(--muddyRiver);
+  }
+  .scrollbar-track.scrollbar-track-y {
+    background: var(--taupeToad);
+    .scrollbar-thumb-y {
+      background: var(--muddyRiver);
+    }
+  }
+}
+
+/* Additional Typography */
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Amatic SC';
+  color: black;
+}
+
+/* App.css - Header */
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
