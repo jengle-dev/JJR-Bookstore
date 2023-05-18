@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; //used to route navMenu components
 
 import NavMenu from './components/NavMenu';
@@ -9,30 +10,24 @@ import Home from './pages/Home'
 // Import About Us page
 // Import Contact page
 
-import logo from './logo.svg';
-import './index.css'; // global styling
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
+    <ApolloProvider client={client}>
+    {/* not sure if apollo needs to wrap around Chakra */}
     <ChakraProvider>
       // update class div to Chakra header class
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+         {/* the components and routes to different pages */}
         </header>
       </div>
     </ChakraProvider>
+    </ApolloProvider>
   );
 }
 
