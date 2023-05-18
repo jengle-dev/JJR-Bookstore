@@ -10,7 +10,7 @@ import Home from './pages/Home'
 // Import Contact page
 
 import logo from './logo.svg';
-import './App.css';
+import './index.css'; // global styling
 
 function App() {
   return (
