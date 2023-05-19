@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-import { BrowserRouter as Router, Route, Route } from 'react-router-dom'; //used to route navMenu components
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; //used to route navMenu components
 
 import NavMenu from './components/NavMenu';
 import Home from './pages/Home';
