@@ -10,6 +10,9 @@ mutation loginUser($email: String!, $password: String!) {
     }
 }
 `;
+//User Profile
+//Name, Phone, Email, Preferred Contact, Did want newsletter?, password, ability to update name, password, email, phone. Access favorites list, adding a book to the cart, removing book from the cart, add/remove from favorites.
+
 
 // ADD_USER  -- not sure if this is correct, if the book count and saved books would be necessary in this mutation 
 export const ADD_USER = gql`
