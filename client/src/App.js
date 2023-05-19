@@ -5,8 +5,10 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; //use
 
 import NavMenu from './components/NavMenu';
 import Home from './pages/Home';
+// Home will include the following components...
 // Navigation/Header - JW
 // Carousel/Footer - JE
+
 // Import Search results page - JW
 // Import Login page
 // Import About Us page
