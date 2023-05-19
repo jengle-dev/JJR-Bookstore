@@ -4,11 +4,14 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; //used to route navMenu components
 
 import NavMenu from './components/NavMenu';
-import Home from './pages/Home'
-// Import Search results page
+import Home from './pages/Home';
+// Navigation/Header - JW
+// Carousel/Footer - JE
+// Import Search results page - JW
 // Import Login page
 // Import About Us page
-// Import Contact page
+// Import Contact page 
+// Import Shopping Cart page - JE
 
 const client = new ApolloClient({
   uri: '/graphql',
