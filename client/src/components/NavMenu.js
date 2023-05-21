@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { MdClose, MdMenu } from 'react-icons/md';
-//import SearchBar from './SearchBar';
-
 
 const NavStyles = styled.nav`
   position: fixed;
@@ -151,6 +149,18 @@ export default function NavMenu() {
             Contact
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/cart"
+            onClick={() => setShowNav(!showNav)}
+            role="button"
+            onKeyDown={() => setShowNav(!showNav)}
+            tabIndex={0}
+          >
+            Cart
+          </NavLink>
+        </li>
+        {/* SearchBook link */}
       </ul>
     </NavStyles>
   );

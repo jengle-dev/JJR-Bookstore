@@ -1,7 +1,13 @@
-import React from 'react'
+import React from 'react';
+//import { useQuery } from '@apollo/client';
 
-export default function Cart() {
+
+const Cart = () => {
   return (
-    <div>Cart</div>
+    <div>
+      <div>Cart</div>
+    </div>
   )
 }
+
+export default Cart;
