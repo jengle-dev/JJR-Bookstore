@@ -1,10 +1,11 @@
 import * as React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; //used to route navMenu components
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
-import NavMenu from './components/NavMenu';
 import Home from './pages/Home';
+import Header from './components/Header';
+import Footer from './components/Footer';
 // Home will include the following components...
 // Navigation/Header - JW
 // Carousel/Footer - JE
@@ -24,16 +25,17 @@ function App() {
   return (
     <Router>
       <ApolloProvider client={client}>
-      {/* not sure if apollo needs to wrap around Chakra -- do Chakra and Apollo go in index.js or App.js? */}
         <ChakraProvider>
           <div className="App">
-            <Switch>
-              {/* the components and routes to different pages */}
-              <Route
-                path="/"
-                element={<Home />}
-                />
-            </Switch>
+            <Header />
+              <Switch>
+                {/* the components and routes to different pages */}
+                <Route
+                  path="/"
+                  element={<Home />}
+                  />
+              </Switch>
+            <Footer />
           </div>
         </ChakraProvider>
       </ApolloProvider>
