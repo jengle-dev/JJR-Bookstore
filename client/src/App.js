@@ -3,7 +3,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; //used to route navMenu components
 
-import NavMenu from './components/NavMenu';
+// import NavMenu from './components/NavMenu';
 import Home from './pages/Home';
 // Home will include the following components...
 // Navigation/Header - JW

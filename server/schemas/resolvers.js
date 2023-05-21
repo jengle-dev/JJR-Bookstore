@@ -1,6 +1,6 @@
 // Requires the app's models
 const { AuthenticationError } = require("apollo-server-express");
-const { User } = require('../models');
+const { User } = require('./typeDefs.js');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
