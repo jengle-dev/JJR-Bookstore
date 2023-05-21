@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { IconButton } from '@chakra-ui/react';
 
+
 import '../index.css';
 
 const SearchBarStyle = styled.div`
