@@ -3,10 +3,6 @@ import { ChakraProvider } from '@chakra-ui/react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; //used to route navMenu components
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
-<<<<<<< HEAD
-// import NavMenu from './components/NavMenu';
-=======
->>>>>>> 9cb780e1237aa58c8eb0969dddfba8775c2e19be
 import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
