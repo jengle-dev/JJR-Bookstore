@@ -4,17 +4,18 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; //use
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 import Home from './pages/Home';
-import Header from './components/Header';
-import Footer from './components/Footer';
-// Home will include the following components...
-// Navigation/Header - JW
-// Carousel/Footer - JE
+import About from './pages/About';
+import Contact from './pages/Contact';
+//import Search from './pages/SearchBook';
+import NavMenu from './components/NavMenu';
+//import Footer from './components/Footer';
 
-// Import Search results page - JW
-// Import Login page
-// Import About Us page
-// Import Contact page 
-// Import Shopping Cart page - JE
+// Home will include the following components...
+// Navigation/Header
+// Carousel/Footer
+
+// Import Search results page
+// Import Shopping Cart page
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -27,15 +28,20 @@ function App() {
       <ApolloProvider client={client}>
         <ChakraProvider>
           <div className="App">
-            <Header />
+            <NavMenu />
               <Switch>
-                {/* the components and routes to different pages */}
-                <Route
-                  path="/"
-                  element={<Home />}
-                  />
+                <Route path="/about">
+                  <About />
+                </Route>
+                <Route path="/contact">
+                  <Contact />
+                </Route>
+                {/* Search? */}
+                <Route path="/">
+                  <Home />
+                </Route>
               </Switch>
-            <Footer />
+            {/* Footer */}
           </div>
         </ChakraProvider>
       </ApolloProvider>
