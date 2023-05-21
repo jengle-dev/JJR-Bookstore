@@ -1,19 +1,25 @@
 import * as React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; //used to route navMenu components
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
+<<<<<<< HEAD
 // import NavMenu from './components/NavMenu';
+=======
+>>>>>>> 9cb780e1237aa58c8eb0969dddfba8775c2e19be
 import Home from './pages/Home';
-// Home will include the following components...
-// Navigation/Header - JW
-// Carousel/Footer - JE
+import About from './pages/About';
+import Contact from './pages/Contact';
+//import Search from './pages/SearchBook';
+import NavMenu from './components/NavMenu';
+//import Footer from './components/Footer';
 
-// Import Search results page - JW
-// Import Login page
-// Import About Us page
-// Import Contact page 
-// Import Shopping Cart page - JE
+// Home will include the following components...
+// Navigation/Header
+// Carousel/Footer
+
+// Import Search results page
+// Import Shopping Cart page
 
 const client = new ApolloClient({
   uri: '/graphql',
@@ -24,16 +30,22 @@ function App() {
   return (
     <Router>
       <ApolloProvider client={client}>
-      {/* not sure if apollo needs to wrap around Chakra -- do Chakra and Apollo go in index.js or App.js? */}
         <ChakraProvider>
           <div className="App">
-            <Switch>
-              {/* the components and routes to different pages */}
-              <Route
-                path="/"
-                element={<Home />}
-                />
-            </Switch>
+            <NavMenu />
+              <Switch>
+                <Route path="/about">
+                  <About />
+                </Route>
+                <Route path="/contact">
+                  <Contact />
+                </Route>
+                {/* Search? */}
+                <Route path="/">
+                  <Home />
+                </Route>
+              </Switch>
+            {/* Footer */}
           </div>
         </ChakraProvider>
       </ApolloProvider>
