@@ -10,6 +10,10 @@ mutation loginUser($email: String!, $password: String!) {
     }
 }
 `;
+
+export const USER_PROFILE = gql`
+mutation userProfile()
+`;
 //User Profile
 //Name, Phone, Email, Preferred Contact, Did want newsletter?, password, ability to update name, password, email, phone. Access favorites list, adding a book to the cart, removing book from the cart, add/remove from favorites.
 
