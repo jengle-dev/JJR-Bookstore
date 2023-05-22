@@ -85,6 +85,7 @@ const SearchBooks = () => {
   //where our components get inserted jsx
   // Copied from project 21 - styled with Bootstrap-React. Switch over to Chakra styling.
   return (
+    <div>
     <>
       <div className="text-light bg-dark p-5">
         <Container>
@@ -147,6 +148,7 @@ const SearchBooks = () => {
         </Row>
       </Container>
     </>
+    </div>
   );
 };
 

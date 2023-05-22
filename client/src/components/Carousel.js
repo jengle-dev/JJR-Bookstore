@@ -11,6 +11,22 @@ import {
     Icon,
     chakra,
     Tooltip, } from '@chakra-ui/react';
+// 1. Import `extendTheme`
+import { extendTheme } from "@chakra-ui/react"
+
+// 2. Call `extendTheme` and pass your custom values
+const theme = extendTheme({
+  colors: {
+   mainColosr: {
+    ivoryGoddess: "#F5EBE0",
+    ecruPrincess: "#E3D5CA",
+    taupeToad: "#D5BDAF",
+    mossyRock: "#79836A",
+    oliveCoat: "#586445",
+    muddyRiver: "#4E443A"
+    }
+  }
+})
 
 // Here we have used react-icons package for the icons
 import { BiLeftArrowAlt, BiRightArrowAlt } from 'react-icons/bi';
