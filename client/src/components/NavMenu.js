@@ -11,27 +11,32 @@ const NavStyles = styled.nav`
   left: 0;
   width: 100%;
   padding: 1rem 0;
-  background-color: var(--ivoryGoddess);
+  background-color: var(--muddyRiver);
+  color: var(--ecruPrincess);
   ul {
+    font-family: 'Lora, serif';
+    font-weight: 700;
     max-width: 1200px;
     margin: 0 auto;
     width: 90%;
     text-align: center;
     li {
+      color: var(--ecruPrincess);
       margin: 0 4px;
       display: inline-block;
       border-radius: 8px;
       transition: 0.3s ease background-color;
       &:hover {
         background-color: var(--mossyRock);
+        color: var(--taupeToad);
       }
     }
     a {
       display: inline-block;
-      font-family: 'Old Standard TT';
+      font-family: 'Lora, serif';
+      font-weight: 700;
       padding: 1rem 2rem;
       font-size: 2rem;
-      color: var(--beaver);
       outline: none;
     }
     .active {
