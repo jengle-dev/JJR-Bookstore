@@ -12,12 +12,18 @@
         "seed": "cd server && npm run seed",
         "build": "cd client && npm run build"
     },
+    "devDependencies": {
+        "concurrently": "^8.0.1"
+    },
     "dependencies": {
-        "@chakra-ui/react": "^2.6.1",
         "@emotion/react": "^11.11.0",
         "@emotion/styled": "^11.11.0",
-        "concurrently": "^8.0.1",
+        "apollo-server-express": "^2.15.0",
         "framer-motion": "^10.12.12",
-        "node": "^20.1.0"
+        "graphql": "^15.8.0",
+        "mongodb": "^5.5.0",
+        "node": "^20.1.0",
+        "react-icons": "^4.8.0",
+        "react-slick": "^0.29.0"
     }
 }

@@ -2,12 +2,12 @@ import React from 'react';
 //import { useQuery } from '@apollo/client';
 
 
-const Home = () => {
+const Cart = () => {
   return (
     <div>
-      <div>Home</div>
+      <div>Cart</div>
     </div>
   )
 }
 
-export default Home;
+export default Cart;

@@ -1,38 +1,51 @@
 import * as React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; //used to route navMenu components
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; //used to route navMenu components
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
+import Home from './pages/Home';
+import About from './pages/About';
+import Contact from './pages/Contact';
+//import Search from './pages/SearchBook';
 import NavMenu from './components/NavMenu';
-import Home from './pages/Home'
-// Import Search results page
-// Import Login page
-// Import About Us page
-// Import Contact page
+//import Footer from './components/Footer';
 
-import logo from './logo.svg';
-import './index.css'; // global styling
+// Home will include the following components...
+// Navigation/Header
+// Carousel/Footer
+
+// Import Search results page
+// Import Shopping Cart page
+
+const client = new ApolloClient({
+  uri: '/graphql',
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <ChakraProvider>
-      // update class div to Chakra header class
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    </ChakraProvider>
+    <Router>
+      <ApolloProvider client={client}>
+        <ChakraProvider>
+          <div className="App">
+            <NavMenu />
+              <Switch>
+                <Route path="/about">
+                  <About />
+                </Route>
+                <Route path="/contact">
+                  <Contact />
+                </Route>
+                {/* Search? */}
+                <Route path="/">
+                  <Home />
+                </Route>
+              </Switch>
+            {/* Footer */}
+          </div>
+        </ChakraProvider>
+      </ApolloProvider>
+    </Router>
   );
 }
 
