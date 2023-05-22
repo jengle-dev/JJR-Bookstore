@@ -10,10 +10,10 @@ const NavStyles = styled.nav`
   left: 0;
   width: 100%;
   padding: 1rem 0;
-  background-color: var(--muddyRiver);
+  background-color: var(--mossyRock);
   color: var(--ecruPrincess);
   ul {
-    font-family: 'Lora, serif';
+    font-family: 'Lora';
     font-weight: 700;
     max-width: 1200px;
     margin: 0 auto;
@@ -40,8 +40,8 @@ const NavStyles = styled.nav`
     }
     .active {
       border-radius: 8px;
-      background-color: var(--mossyRock);
-      color: var(--blush);
+      background-color: var(--muddyRiver);
+      color: var(--taupeToad);
     }
   }
   .mobile-menu-icon {
@@ -70,7 +70,7 @@ const NavStyles = styled.nav`
     .navItems {
       --top: 1.2rem;
       transition: 0.3s ease transform;
-      background-color: var(--ecruPrincess);
+      background-color: var(--mossyRock);
       padding: 0.2rem 0.2rem 2rem 0rem;
       width: 70%;
       max-width: 300px;
