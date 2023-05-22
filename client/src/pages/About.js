@@ -5,7 +5,7 @@ import AboutImg from '../assets/images/about-us-img.png';
 
 const AboutPageStyles = styled.div`
   padding: 8rem 0 8rem 0; 
-  background-color: var(--taupeToad);
+  background-color: var(--ecruPrincess);
   .top-section {
     display: flex;
     align-items: center;
@@ -68,7 +68,7 @@ export default function About() {
               <h2 className="about__heading">About the Owners</h2>
               <div className="about__info">
                 <Text fontSize='2xl'>
-                During KU's full-stack coding bootcamp, we discovered a passion for literature and embarked on a daring adventure to open an online community for booklovers. Our journey serves as a testament to the transformative power of friendship, dedication, and the pursuit of dreams.
+                During KU's full-stack coding bootcamp, we discovered a passion for literature and embarked on a daring adventure to open an online community for book lovers. Our journey serves as a testament to the transformative power of friendship, dedication, and the pursuit of dreams.
                 </Text>
               </div>
             </div>
