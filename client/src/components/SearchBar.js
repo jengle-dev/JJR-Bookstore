@@ -59,7 +59,7 @@ export const SearchBar = ({ setResults }) => {
     return (
         <SearchBarStyle>
             <div className ="input-wrapper">
-                <IconButton colorScheme='oliveCoat' aria-label='Search database' icon={<SearchIcon />} />
+                <IconButton colorScheme='oliveCoat' aria-label='Search database' icon={<IconButton />} />
                 <input placeholder="Type to search..." value={input} onChange={(e) => handleChange(e.target.value)} />
             </div>
         </SearchBarStyle>
