@@ -23,20 +23,34 @@ import Footer from './components/Footer';
 // 1. Import `extendTheme`
 import { extendTheme } from "@chakra-ui/react"
 
-// 2. Extend the theme to include custom colors, fonts, etc
+// Extend the theme to include custom colors, fonts, etc
+// colorname.900
 const colors = {
-  brand: {
-    ivoryGoddess: "#F5EBE0",
-    ecruPrincess: "#E3D5CA",
-    taupeToad: "#D5BDAF",
-    mossyRock: "#79836A",
-    oliveCoat: "#586445",
-    muddyRiver: "#4E443A",
-    licorice: "#221508",
+  ivoryGoddess: {
+    900: "#F5EBE0"
   },
-}
+  ecruPrincess: {
+    900: "#E3D5CA"
+  },
+  taupeToad: {
+    900: "#D5BDAF"
+  },
+  mossyRock: { 
+    900: "#79836A"
+  },
+  oliveCoat: { 
+    900: "#586445"
+  },
+  muddyRiver: { 
+    900: "#4E443A"
+  },
+  licorice: { 
+    900: "#221508" 
+  },
+};
 
 const theme = extendTheme({ colors })
+
 // Home will include the following components...
 // Navigation/Header
 // Carousel/Footer
@@ -90,7 +104,7 @@ function App() {
                 <Home />
               </Route>
             </Switch>
-              <Footer />
+            <Footer />
           </div>
         </ChakraProvider>
       </ApolloProvider>

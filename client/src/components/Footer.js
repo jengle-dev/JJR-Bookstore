@@ -1,13 +1,6 @@
 import * as React from 'react';
-import brownMossy from '../images/Brown-Circle-Book-Icon-Mossy.png';
-import brownToad from '../images/Brown-Circle-Book-Icon-Toad.png';
-import greenMossy from '../images/Green-Circle-Book-Icon-Mossy.png';
-import greenToad from '../images/Green-Circle-Book-Icon-Toad.png';
-import { Flex, Container, Heading, Text, Box, HStack, Button, Circle, IconButton } from '@chakra-ui/react';
-// Getting an error when importing these pngs that they aren't supported if they fall outside the src directory
 
-
-
+import { Flex, Text, Box, HStack, Circle, IconButton, Container } from '@chakra-ui/react';
 
 // export default Footer;
 export default function Footer() {
@@ -17,13 +10,13 @@ export default function Footer() {
       <HStack spacing="24px" align="center" />
       <Flex gap="10px" wrap="wrap" justify="center">
         <Box as="div">
-          <IconButton aria-label='contact-us' icon={<Circle />}/><Text textColor="#E3D5CA">Contact Us</Text>
+          <IconButton aria-label='contact-us' icon={<Circle />}/><Text textColor="#E3D5CA" bg={'oliveCoat.900'}>Contact Us</Text>
         </Box>
         <Box as="div">
-          <IconButton aria-label='about-us' icon={<Circle />}/><Text textColor="#E3D5CA">About Us</Text>
+          <IconButton aria-label='about-us' bg={'oliveCoat.900'} icon={<Circle />}/><Text as ="h3" >About Us</Text>
         </Box>
         <Box as="div">
-          <IconButton aria-label='about-us' icon={<Circle />}/><Text textColor="#E3D5CA">Address</Text>
+          <IconButton aria-label='about-us' icon={<Circle />}/><Text textColor="muddyRiver.900">Address</Text>
         </Box>
       </Flex>
    </Flex>
