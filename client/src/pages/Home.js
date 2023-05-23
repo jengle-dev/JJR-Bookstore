@@ -5,8 +5,9 @@ import HomeDetails from '../components/HomeDetails';
 const Home = () => {
   return (
     <div>
-      <div>Home</div>
+      {/* Displays the HomeDetails component */}
       <HomeDetails />
+      {/* Displays the Featured Books Card Grid */}
     </div>
   )
 };

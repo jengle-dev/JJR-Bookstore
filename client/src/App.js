@@ -4,11 +4,12 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; //use
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
+// import About from './pages/About';
+// import Contact from './pages/Contact';
 //import Search from './pages/SearchBook';
-import NavMenu from './components/NavMenu';
+// import NavMenu from './components/NavMenu';
 import Footer from './components/Footer';
+import Navbar from './components/NavBar';
 
 // Extend the theme to include custom colors, fonts, etc
 // colorname.900
@@ -56,15 +57,15 @@ function App() {
       <ApolloProvider client={client}>
         <ChakraProvider theme={theme}>
           <div className="App">
-            <NavMenu />
+            <Navbar />
             <Switch>
-              <Route path="/about">
+              {/* <Route path="/about">
                 <About />
               </Route>
               <Route path="/contact">
                 <Contact />
               </Route>
-              {/* Search? */}
+              Search? */}
               <Route path="/">
                 <Home />
               </Route>

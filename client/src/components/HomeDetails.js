@@ -1,33 +1,34 @@
 import * as React from "react";
-
+import { useState } from 'react';
+import openBookPic from '../images/photos/olga-tutunaru-JMATuFkXeHU-unsplash.jpg';
 import {
   Flex,
   Image,
   Text,
-  Box,
   Stack,
-  HStack,
-  Circle,
-  IconButton,
   Container,
+  Box,
 } from "@chakra-ui/react";
-import photo from '../images/photos/olga-tutunaru-JMATuFkXeHU-unsplash.jpg';
+
 
 export default function HomeDetails() {
   return (
     <div>
-      <Box h="112px" bg={"ecruPrincess.900"}></Box>
+      <Box bg={"mossyRock.900"} w="100%" p={4} color={"ivoryGoddess.900"} h="8px"></Box>
       <Flex as="section" className="home-details" bg={"ecruPrincess.900"}>
-        <Container maxW="container.xl">
+        <Container maxW="container.xl" marginTop='25px'>
           <Stack direction="row">
+
             <Image
-              p='10px'
+              mt='15px'
               boxSize="300px"
               objectFit="cover"
-              src={photo}
+              src={openBookPic}
               alt="open book - Olga Tutunara"
+              boxShadow='xl'
+              rounded='md'
             />
-            <Text m='20px'>
+            <Text mt="30px" p="30px">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </Text>
           </Stack>
