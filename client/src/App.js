@@ -10,7 +10,7 @@ import Contact from './pages/Contact';
 import NavMenu from './components/NavMenu';
 import Footer from './components/Footer';
 
-// 2. Extend the theme to include custom colors, fonts, etc
+//Extend the theme to include custom colors, fonts, etc
 const colors = {
   brand: {
     ivoryGoddess: "#F5EBE0",
@@ -24,6 +24,7 @@ const colors = {
 }
 
 const theme = extendTheme({ colors })
+
 // Home will include the following components...
 // Navigation/Header
 // Carousel/Footer
