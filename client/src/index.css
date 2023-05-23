@@ -10,12 +10,16 @@
 }
 
 :root {
+  /* CSS HEX */
   --ivoryGoddess: #F5EBE0;
   --ecruPrincess: #E3D5CA;
   --taupeToad: #D5BDAF;
   --mossyRock: #79836A;
   --oliveCoat: #586445;
   --muddyRiver: #4E443A;
+  --licorice: #221508;
+
+
   --chakra-fontSizes-lg: '16px';
   --chakra-colors-gray-100: '#fafafa';
   --chakra-colors-gray-200: '#f7f7f7';
@@ -55,6 +59,16 @@ img, svg {
 
 button {
   outline: none;
+}
+
+footer {
+  height: 60px;
+  background-color: var(--licorice);
+  color: var(--ivoryGoddess);
+  position: fixed;
+  left:0;
+  bottom:0;
+  right:0;
 }
 
 .container {
