@@ -1,26 +1,29 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
-import { Card, CardBody, CardFooter, ButtonGroup, Button, Image, Stack, Heading, Text, Divider } from '@chakra-ui/react';
+import reactRouterDom from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { Card as ChakraCard, CardBody, CardFooter, ButtonGroup, Button, Image, Stack, Heading, Text, Divider } from '@chakra-ui/react';
 import data from './FeaturedBookCards';
 
 export default function SingleBookCard() {
+  return (
   <>
-    {data.featuredBooks.forEach((book, index) => (
-      <Card key={index} maxW='sm'>
-        <CardBody>
-          <Image
-            src={book.imageSrc}
-            alt='Book cover'
-            borderRadius='lg'
-          />
-          <Stack mt='6' spacing='3'>
-            <Heading className='h4'>{book.name}</Heading>
-            <Heading className='h5'>{book.author}</Heading>
+   {data.featuredBooks.forEach((book, index) => (
+    <ChakraCard key={index} maxW='lg'>
+      <CardBody>
+        <Image boxSize="100px"
+          src={book.ImageURL}
+          alt='Book cover'
+          borderRadius='lg'
+          bg='ivoryGoddess.900'
+        />
+        <Stack mt='6' spacing='3'>
+            <Heading className='h4'>{book.Name}</Heading>
+            <Heading className='h5'>{book.Author}</Heading>
             <Text>
-              {book.description}
+              {book.Description}
             </Text>
             <Text color='blue.600' fontSize='2xl'>
-              {book.price}
+              {book.Price}
             </Text>
           </Stack>
         </CardBody>
@@ -35,17 +38,22 @@ export default function SingleBookCard() {
             </Button>
           </ButtonGroup>
         </CardFooter>
+        
           {/* Log book details */}
-          {console.log("ID: ", book.id)}
+          {/* {console.log("ID: ", book.id)}
           {console.log("ImageURL: ", book.imageURL)}
           {console.log("Name: ", book.name)}
           {console.log("Author: ", book.author)}
           {console.log("Price: ", book.price)}
           {console.log("ISBN: ", book.isbn)}
-          {console.log("------------------------------------")}
-      </Card>
-    ))}
+          {console.log("------------------------------------")} */}
+          
+          </ChakraCard>
+              )
+    )
+    }
   </>
+  )
 };
 
 // const data = {

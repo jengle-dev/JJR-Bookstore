@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, Image } from '@chakra-ui/react';
 import styled from 'styled-components';
-import AboutImg from '../assets/images/about-us-img.png';
+import AboutImg from '../images/photos/about-us-img.png';
 
 const AboutPageStyles = styled.div`
   padding: 8rem 0 8rem 0; 

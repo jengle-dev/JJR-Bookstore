@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import About from "./pages/About";
-
-import JJRLogo from "../assets/logos/Circle-Taupe-Mossy-Full-Logo-Green-Border.png";
-import { NavLink, Redirect, useHistory } from "react-router-dom";
+import JJRLogo from "../images//logos/Circle-Taupe-Mossy-Full-Logo-Green-Border.png";
+import { useHistory } from "react-router-dom";
 import {
   Box,
   Center,

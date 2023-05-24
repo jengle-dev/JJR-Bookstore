@@ -78,6 +78,10 @@ footer {
   margin: 0 auto;
 }
 
+.gridBg {
+  background-color: var(--ecruPrincess);
+}
+
 
 /* Smooth scroll */
 [data-scrollbar] {
@@ -102,6 +106,26 @@ h1,h2,h3,h4,h5,h6 {
   color: var(--oliveCoat);
 }
 
+h2.landing {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 1.25rem;
+  color: var(--oliveCoat);
+ }
+
+.title {
+  font-family: Old Standard TT;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  margin: 5px;
+  color: var(--oliveCoat);
+ }
+
+ .author {
+  font-family: 'Amatic SC';
+ }
 
 /* App.css - Header */
 
@@ -143,3 +167,35 @@ h1,h2,h3,h4,h5,h6 {
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
+
+/* responsive */
+/* Standardized Chakra UI breakpoints and sizes built in */
+
+/* // These are the default breakpoints */
+/* const breakpoints = {
+  sm: '30em', // 480px
+  md: '48em', // 768px
+  lg: '62em', // 992px
+  xl: '80em', // 1280px
+  '2xl': '96em', // 1536px
+}
+
+// Internally, we transform to this
+const breakpoints = ['0em', '30em', '48em', '62em', '80em', '96em'] */
+
+/* Text Elements can also be Responsive */
+/* <Text fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
+  This is responsive text
+</Text> */
+
+/* Image Responsive */
+/* <Box p={4} display={{ md: 'flex' }}>
+  <Box flexShrink={0}>
+    <Image
+      borderRadius='lg'
+      width={{ md: 40 }}
+      src='https://bit.ly/2jYM25F'
+      alt='Woman paying for a purchase'
+    />
+  </Box> */
