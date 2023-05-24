@@ -5,23 +5,23 @@ import data from './FeaturedBookCards';
 export default function SingleBookCard() {
   return (
   <>
-   {data.featuredBooks.forEach((book, index) => (
+   {data.featuredBooks.map((book, index) => (
     <ChakraCard key={index} maxW='lg'>
       <CardBody>
         <Image boxSize="100px"
-          src={book.ImageURL}
+          src={book.imageURL}
           alt='Book cover'
           borderRadius='lg'
           bg='ivoryGoddess.900'
         />
         <Stack mt='6' spacing='3'>
-            <Heading className='h4'>{book.Name}</Heading>
-            <Heading className='h5'>{book.Author}</Heading>
+            <Heading className='h4'>{book.name}</Heading>
+            <Heading className='h5'>{book.author}</Heading>
             <Text>
-              {book.Description}
+              {book.description}
             </Text>
             <Text color='blue.600' fontSize='2xl'>
-              {book.Price}
+              {book.price}
             </Text>
           </Stack>
         </CardBody>
