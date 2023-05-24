@@ -22,7 +22,6 @@ Button {
 }
 `;
 
-
 const Signup = () => {
   const [formState, setFormState] = useState({
     username: '',
