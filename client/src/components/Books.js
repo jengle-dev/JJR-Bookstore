@@ -1,6 +1,6 @@
 import React from 'react';
-import { Flex, Box, Heading, Text, Button, Spacer, HStack, Stack, Image, SimpleGrid } from '@chakra-ui/react';
-import SingleBookCard from './SingleBookCard.tsx';
+import { Box, Heading, Text, Stack, Image, SimpleGrid } from '@chakra-ui/react';
+// import SingleBookCard from './SingleBookCard.tsx';
 // import SingleBookCard from './SingleBookCard';
 
 export default function FeaturedBooks() {
@@ -10,7 +10,7 @@ export default function FeaturedBooks() {
                 {/* row 1 */}
                 <Box columns={2} p="30px" bg="taupeToad.900" h="300px" border="2px solid" borderRadius={30}>
                     <Image boxSize="100px"
-                        src="./images/featuredBooks/1984.jpg"
+                        src="../images/featuredBooks/1984.jpg"
                         alt='Book cover'
                         borderRadius='lg'
                         bg='ivoryGoddess.900'

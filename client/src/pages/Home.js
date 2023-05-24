@@ -1,7 +1,7 @@
 import React from 'react';
 import HomeDetails from '../components/HomeDetails';
-import SingleBookCard from '../components/SingleBookCard.tsx';
-import Books from '../components/Books';
+// import SingleBookCard from '../components/SingleBookCard.tsx';
+// import Books from '../components/Books';
 
 const Home = () => {
   return (

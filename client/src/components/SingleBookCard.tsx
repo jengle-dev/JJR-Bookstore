@@ -1,6 +1,4 @@
 import React from 'react';
-import reactRouterDom from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import { Card as ChakraCard, CardBody, CardFooter, ButtonGroup, Button, Image, Stack, Heading, Text, Divider } from '@chakra-ui/react';
 import data from './FeaturedBookCards';
 

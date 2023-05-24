@@ -10,9 +10,8 @@ import About from './pages/About';
 // import NavMenu from './components/NavMenu';
 import Footer from './components/Footer.tsx';
 import Navbar from './components/NavBar.tsx';
-import { FaBook } from 'react-icons/fa';
 import FeaturedBooks from './components/Books';
-import SingleBookCard from './components/SingleBookCard.tsx';
+// import SingleBookCard from './components/SingleBookCard.tsx';
 
 // Extend the theme to include custom colors, fonts, etc
 // colorname.900
