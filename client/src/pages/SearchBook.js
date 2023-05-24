@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 //import Chakra styling
+import { Container, Form, Row, Col, Button, Card } from '@chakra-ui/react';
 import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
 import { SAVE_BOOK } from '../utils/mutations';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
-// import search bar?
 
 // Component below searches in the OpenLibrary to return the ISBN which is the searchInput data inserted below https://openlibrary.org/search.json?q=*
 const SearchBooks = () => {
@@ -83,7 +83,7 @@ const SearchBooks = () => {
   };
 
   //where our components get inserted jsx
-  // Copied from project 21 - styled with Bootstrap-React. Switch over to Chakra styling.
+  // Copied from project 21 but using Chakra UI
   return (
     <div>
     <>
