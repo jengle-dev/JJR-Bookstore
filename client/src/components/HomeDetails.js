@@ -9,6 +9,7 @@ import {
   Stack,
   Container,
   Box,
+  Divider
 } from "@chakra-ui/react";
 
 
@@ -22,12 +23,15 @@ export default function HomeDetails() {
 
             <Image
               mt='15px'
+              mb='50px'
               boxSize="300px"
               objectFit="cover"
               src={openBookPic}
               alt="open book - Olga Tutunara"
               boxShadow='xl'
               rounded='md'
+              flexGrow={3}
+              flexShrink={-3}
             />
             <Text mt="30px" p="30px">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -35,6 +39,14 @@ export default function HomeDetails() {
           </Stack>
         </Container>
       </Flex>
+      <Divider color='mossyRock.900' border='solid' />
+      <Flex as="section" className="home-details" bg={"ecruPrincess.900"}>
+        <Stack direction="row">
+        <Text mt="30px" p="30px">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            </Text>
+            </Stack>
+            </Flex>
     </div>
   );
 }

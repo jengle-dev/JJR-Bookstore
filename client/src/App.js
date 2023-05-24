@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; //use
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 import Home from './pages/Home';
-// import Contact from './pages/Contact';
-//import Search from './pages/SearchBook';
-import NavMenu from './components/NavMenu';
+import Contact from './pages/Contact';
+// import Search from './pages/SearchBook';
+import About from './pages/About';
+// import NavMenu from './components/NavMenu';
 import Footer from './components/Footer.tsx';
 import Navbar from './components/NavBar.tsx';
 
@@ -58,19 +59,19 @@ function App() {
           <div className="App">
             <Navbar />
             <Switch>
-              {/* <Route path="/about">
+              <Route path="/about">
                 <About />
               </Route>
               <Route path="/contact">
                 <Contact />
               </Route>
-              Search? */}
+              Search?
               <Route path="/">
                 <Home />
               </Route>
             </Switch>
-            <Footer />
           </div>
+          <Footer className='footer' />
         </ChakraProvider>
       </ApolloProvider>
     </Router>

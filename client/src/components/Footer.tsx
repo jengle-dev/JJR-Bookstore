@@ -7,8 +7,7 @@ import {
   Text,
   useColorModeValue,
   VisuallyHidden,
-  Social
-} from '@chakra-ui/react';
+  } from '@chakra-ui/react';
 import { FaGithubSquare, FaInstagram } from 'react-icons/fa';
 import { ReactNode } from 'react';
 
@@ -23,7 +22,7 @@ const SocialButton = ({
 }) => {
   return (
     <chakra.button
-      bg={useColorModeValue('taupeToad.900', 'taupeToad.900')}
+      bg={('taupeToad.900')}
       rounded={'full'}
       w={8}
       h={8}
@@ -46,8 +45,10 @@ const SocialButton = ({
 export default function SmallWithSocial() {
   return (
     <Box
-      bg={('licorice.900', 'licorice.900')}
-      color={('taupeToad.900', 'taupeToad.900')}>
+      className='footer'
+      bg={('licorice.900')}
+      color={('taupeToad.900')}
+      >
       <Container
         as={Stack}
         maxW={'6xl'}
@@ -56,7 +57,7 @@ export default function SmallWithSocial() {
         spacing={4}
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}>
-        <Text>© 2023 JJR Bookstore. All rights reserved</Text>
+        <Text color='taupeToad.900' flexWrap='wrap'>© 2023 JJR Bookstore. All rights reserved. Developed & Designed by Jennifer Engle, Rebecca Lehew & Julianne Waters</Text>
         <Stack direction={'row'} spacing={6}>
           <SocialButton label={'Github'} href={'https://github.com/jengle-dev/JJR-Bookstore'}>
             <FaGithubSquare />
@@ -69,24 +70,3 @@ export default function SmallWithSocial() {
     </Box>
   );
 }
-
-// // export default Footer;
-// export default function Footer() {
-//   // const [showFooter, setFooter] = useState(false);
-//   return (
-//     <Flex as="footer" className='footer' >
-//       <HStack spacing="24px" align="center" />
-//       <Flex gap="10px" wrap="wrap" justify="center">
-//         <Box as="div">
-//           <IconButton aria-label='contact-us' icon={<Circle />}/><Text textColor="#E3D5CA" bg={'oliveCoat.900'}>Contact Us</Text>
-//         </Box>
-//         <Box as="div">
-//           <IconButton aria-label='about-us' bg={'oliveCoat.900'} icon={<Circle />}/><Text as ="h3" >About Us</Text>
-//         </Box>
-//         <Box as="div">
-//           <IconButton aria-label='about-us' icon={<Circle />}/><Text textColor="muddyRiver.900">Address</Text>
-//         </Box>
-//       </Flex>
-//    </Flex>
-//   )
-// }

@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import About from './pages/About';
 
 import JJRLogo from '../assets/logos/Circle-Taupe-Mossy-Full-Logo-Green-Border.png';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect, useHistory } from 'react-router-dom';
 import {
     Box,
+    Center,
     Flex,
     Text,
     IconButton,
@@ -19,6 +20,7 @@ import {
     useColorModeValue,
     useBreakpointValue,
     Image,
+    HStack
 } from '@chakra-ui/react';
 
 import {
@@ -29,20 +31,20 @@ import {
 } from '@chakra-ui/icons';
 
 export default function Navbar() {
-    const { isOpen, onToggle } = useState();
+    const [ isOpen, setIsOpen ] = useState(false);
 
     return (
-        <Box align="center">
+        <Box>
             {/* Header Background */}
             <Flex
-                bg={('licorice.900', 'licorice.900')}
-                color={('ivoryGoddess.900', 'ivoryGoddess.900')}
+                bg='licorice.900'
+                color='ivoryGoddess.900'
                 minH={'60px'}
                 py={{ base: 2 }}
                 px={{ base: 4 }}
                 borderBottom={1}
                 borderStyle={'solid'}
-                borderColor={('mossyRock.900', 'mossyRock.900')}
+                borderColor={('mossyRock.900')}
                 align={'center'}
                 justify={'center'}>
 
@@ -53,12 +55,12 @@ export default function Navbar() {
                     display={{ base: 'flex', md: 'none' }}>
 
                     {/* Actual Hamburger Button/Icon */}
-                    <IconButton
-                        onClick={onToggle}
+                    <IconButton bg='mossyRock.900'
+                        onClick={()=> setIsOpen(!isOpen)}
                         icon={
                             isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} color='ivoryGoddess.900' />
                         }
-                        variant={'ghost'}
+                        // variant={'ghost'}
                         aria-label={'Toggle Navigation'}
                     />
                 </Flex>
@@ -68,7 +70,7 @@ export default function Navbar() {
                     <Text
                         textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
                         fontFamily={'heading'}
-                        color={('ecruPrincess.900', 'white')}>
+                        color={('ecruPrincess.900')}>
                         {/* Bookstore Logo */}
                         <Image src={JJRLogo} alt="logo" boxSize='150px' />
                     </Text>
@@ -77,7 +79,7 @@ export default function Navbar() {
                     </Flex>
                 </Flex>
 
-                <Stack
+                <HStack
                     flex={{ base: 1, md: 0 }}
                     justify={'flex-end'}
                     direction={'row'}
@@ -89,7 +91,7 @@ export default function Navbar() {
                         fontWeight={600}
                         color={'ivoryGoddess.900'}
                         bg={'oliveCoat.900'}
-                        href={'/login'}
+                        href={'/#'}
                         _hover={{
                             bg: 'mossyRock.900',
                         }}>
@@ -102,15 +104,14 @@ export default function Navbar() {
                         fontWeight={600}
                         color={'ivoryGoddess.900'}
                         bg={'muddyRiver.900'}
-                        href={'/signup'}
+                        href={'/#'}
                         _hover={{
                             bg: 'mossyRock.900',
                         }}>
                         Sign Up
                     </Button>
-                </Stack>
+                </HStack>
             </Flex>
-
             <Collapse in={isOpen} animateOpacity>
                 <MobileNav />
             </Collapse>
@@ -119,12 +120,14 @@ export default function Navbar() {
 }
 
 const DesktopNav = () => {
-    const linkColor = ('taupeToad.900', 'taupeToad.900');
-    const linkHoverColor = ('ecruPrincess.900', 'ecruPrincess.900');
-    const popoverContentBgColor = ('ecruPrincess.900', 'ecruPrincess.900');
+    const linkColor = ('taupeToad.900');
+    const linkHoverColor = ('ecruPrincess.900');
+    const popoverContentBgColor = ('ecruPrincess.900');
 
     return (
         <Stack direction={'row'} spacing={4}>
+                                        <Center >
+
             {NAV_ITEMS.map((navItem) => (
                 <Box key={navItem.label}>
                     <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -132,7 +135,7 @@ const DesktopNav = () => {
                             <Link
                                 p={2}
                                 href={navItem.href ?? ''}
-                                fontSize={'sm'}
+                                fontSize={'xl'}
                                 fontWeight={500}
                                 color={linkColor}
                                 _hover={{
@@ -161,6 +164,8 @@ const DesktopNav = () => {
                     </Popover>
                 </Box>
             ))}
+                                        </Center>
+
         </Stack>
     );
 };
@@ -173,7 +178,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
             display={'block'}
             p={2}
             rounded={'md'}
-            _hover={{ bg: ('taupeToad.900', 'taupeToad.900') }}>
+            _hover={{ bg: ('taupeToad.900') }}>
             <Stack direction={'row'} align={'center'}>
                 <Box>
                     <Text
@@ -213,10 +218,10 @@ const MobileNav = () => {
 };
 
 const MobileNavItem = ({ label, children, href }: NavItem) => {
-    const { isOpen, onToggle } = useState();
-
+    const [ isOpen, setIsOpen ] = useState(false);
+const history = useHistory();
     return (
-        <Stack spacing={4} onClick={children && onToggle}>
+        <Stack spacing={4} onClick={ ()=> history.replace(label) }>
             <Flex
                 py={2}
                 as={Link}
