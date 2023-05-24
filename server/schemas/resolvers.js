@@ -34,22 +34,22 @@ const resolvers = {
             return { token, user };
         },
     
-        saveBook: async (parent, { book }, context) => {
+        saveFavBook: async (parent, { book }, context) => {
             if (context.user) {
                 return await User.findOneAndUpdate(
                     { _id: context.user._id },
                     { $addToSet: { savedBooks: { book } } },
                     { new: true, runValidators: true }
-                ).populate("savedBooks");
+                ).populate("savedFavBooks");
             }
             throw new AuthenticationError("Please login now.");
         },
 
-        removeBook: async (parent, { bookId }, context) => {
+        removeFavBook: async (parent, { bookId }, context) => {
             if (context.user) {
                 return await User.findOneAndUpdate(
                     { _id: context.user._id },
-                    { $pull: { savedBooks: { bookId: bookId } } },
+                    { $pull: { savedFavBooks: { bookId: bookId } } },
                     { new: true }
                 );
             }

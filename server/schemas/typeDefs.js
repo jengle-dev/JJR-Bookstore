@@ -14,13 +14,13 @@ const typeDefs = gql`
 
     # User profile data
     type User {
-        _id: ID
-        username: String
-        email: String
-        password: String
+        userId: ID
+        username: String!
+        email: String!
+        password: String!
         phoneNumber: String
         savedBooks: [Book]
-        orders: [Order!]!
+        orders: [Order]
     }
 
     # Query that will always find and return the logged in user's data
@@ -36,7 +36,7 @@ const typeDefs = gql`
 
     # What a user currently plans to purchase
     type ShoppingCart {
-        id: ID!
+        productId: ID!
         items: [CartItemInput!]!
     }
 
@@ -45,28 +45,27 @@ const typeDefs = gql`
         _id: ID!
         product: Product!
         quantity: Int!
+        price: Int!
     }
 
-    # User's past purcahse data
+    # User's past purcahse data -- NICE TO HAVE. NOT A PRIORITY FOR MVP USER PROFILE.
     type Order {
         _id: ID!
         items: [OrderItems!]!
+        orderDate: date
         total: Float!
         # What other fields related to an order do we need?
     }
 
-    # Books from the carousel that are available to order/purchase
-    type OrderItem {
-        _id: ID!
-        product: Product!
-        quantity: Int!
-    }
-
     # The product/book that is added to a cart for ordering
     type Product {
-        id: ID!
+        productId: ID!
+        imageURL: String
         name: String!
+        author: String
+        description: String
         price: Float!
+        quantity: Int
     }
 
     # Sets the fields a user can update
@@ -89,16 +88,16 @@ const typeDefs = gql`
         updateUserProfile(input: UpdateUserProfileInput!): User!
         
         # Sets the data structure for removing a saved book from the user's profile
-        removeBook(userId: ID!, bookId: String!): User
+        removeFavBook(userId: ID!, bookId: String!): User
         
         # Sets the data structure for saving a book to the user's profile
-        saveBook(userId: ID!, authors: [String!]!, description: String!, title: String!, bookId: String!, image: String, link: String): User
+        saveFavBook(userId: ID!, authors: [String!]!, description: String!, title: String!, bookId: String!, image: String, link: String): User
 
         # Add to shopping cart
-        addBookToCart(bookId: String!, quantity: Int!): ShoppingCart
+        addToCart(productId: ID!, quantity: Int!): ShoppingCart
 
         # Remove from shopping cart
-        removeBookFromCart(bookId: String!): ShoppingCart
+        removeFromCart(productId: ID!): ShoppingCart
 
         # checkout
         checkout(cartItems: [CartItemInput!]!): Order!
