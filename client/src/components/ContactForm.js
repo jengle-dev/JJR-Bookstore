@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const FormStyle = styled.form`
+  background-color: var(--taupeToad);
+  padding-top: 2rem;
   width: 100%;
   font-family: 
   .form-group {
     width: 100%;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
   }
   label {
     font-size: 1.5rem;
@@ -27,8 +27,8 @@ const FormStyle = styled.form`
     resize: vertical;
   }
   button[type='submit'] {
-    background-color: var(--mossyRock);
-    color: var(--licorice);
+    background-color: var(--oliveCoat);
+    color: var(--ivoryGoddess);
     font-size: 1.5rem;
     display: inline-block;
     margin-bottom: 4rem;
@@ -36,6 +36,10 @@ const FormStyle = styled.form`
     border-radius: 8px;
     cursor: pointer;
   }
+  .button:hover {
+    background-color:(--mossyRock);
+    transition: 0.7s;
+}
 `;
 
 export default function ContactForm() {
