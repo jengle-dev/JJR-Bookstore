@@ -1,6 +1,7 @@
 import * as React from "react";
-import { useState } from 'react';
-
+// import { useState } from 'react';
+// import SingleBookCard from './SingleBookCard';
+import FeaturedBookCards from './FeaturedBookCards';
 import openBookPic from '../images/photos/olga-tutunaru-JMATuFkXeHU-unsplash.jpg';
 import {
   Flex,
@@ -46,7 +47,9 @@ export default function HomeDetails() {
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
             </Text>
             </Stack>
+
             </Flex>
+<FeaturedBookCards/>
     </div>
   );
 }

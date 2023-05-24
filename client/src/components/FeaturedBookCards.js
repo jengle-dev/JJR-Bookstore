@@ -1,40 +1,10 @@
-import {
-  Flex,
-  Circle,
-  Box,
-  Image,
-  Badge,
-  useColorModeValue,
-  Icon,
-  chakra,
-  Tooltip,
-} from '@chakra-ui/react';
-import { FiShoppingCart } from 'react-icons/fi';
-
-// 1. Import `extendTheme`
-import { extendTheme } from "@chakra-ui/react"
-
-// 2. Call `extendTheme` and pass your custom values
-const theme = extendTheme({
-  colors: {
-    mainColosr: {
-      ivoryGoddess: "#F5EBE0",
-      ecruPrincess: "#E3D5CA",
-      taupeToad: "#D5BDAF",
-      mossyRock: "#79836A",
-      oliveCoat: "#586445",
-      muddyRiver: "#4E443A"
-    }
-  }
-});
-
 const data = {
   isNew: true,
   featuredBooks: [
     {
       id: '1',
       imageURL:
-        'client/src/featuredBooks/1984.jpg',
+        './assets/featuredBooks/1984.jpg',
       name: 'Nineteen-Eighty-Four',
       author: 'George Orwell',
       description: 'Nineteen Eighty-Four: A Novel, often referred to as 1984, is a dystopian social science fiction novel by the English novelist George Orwell (the pen name of Eric Arthur Blair). It was published on 8 June 1949 by Secker & Warburg as Orwell\'s ninth and final book completed in his lifetime. Thematically, Nineteen Eighty-Four centres on the consequences of totalitarianism, mass surveillance, and repressive regimentation of persons and behaviours within society. Orwell, himself a democratic socialist, modelled the authoritarian government in the novel after Stalinist Russia. More broadly, the novel examines the role of truth and facts within politics and the ways in which they are manipulated.',
@@ -153,75 +123,6 @@ const data = {
       isbn: '0060256672'
     }
   ]
-};
-
-function ProductAddToCart() {
-  return (
-    <Flex p={50} w="full" alignItems="center" justifyContent="center">
-      <Box
-        bg={useColorModeValue('white', 'gray.800')}
-        maxW="sm"
-        borderWidth="1px"
-        rounded="lg"
-        shadow="lg"
-        position="relative">
-        {data.isNew && (
-          <Circle
-            size="10px"
-            position="absolute"
-            top={2}
-            right={2}
-            bg="red.200"
-          />
-        )}
-
-        <Image
-          src={data.imageURL}
-          alt={`Picture of ${data.name}`}
-          roundedTop="lg"
-        />
-
-        <Box p="6">
-          <Box d="flex" alignItems="baseline">
-            {data.isNew && (
-              <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
-                New
-              </Badge>
-            )}
-          </Box>
-          <Flex mt="1" justifyContent="space-between" alignContent="center">
-            <Box
-              fontSize="2xl"
-              fontWeight="semibold"
-              as="h4"
-              lineHeight="tight"
-              isTruncated>
-              {data.name}
-            </Box>
-            <Tooltip
-              label="Add to cart"
-              bg="white"
-              placement={'top'}
-              color={'gray.800'}
-              fontSize={'1.2em'}>
-              <chakra.a href={'#'} display={'flex'}>
-                <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} />
-              </chakra.a>
-            </Tooltip>
-          </Flex>
-
-          <Flex justifyContent="space-between" alignContent="center">
-            <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
-              <Box as="span" color={'gray.600'} fontSize="lg">
-                £
-              </Box>
-              {data.price.toFixed(2)}
-            </Box>
-          </Flex>
-        </Box>
-      </Box>
-    </Flex>
-  );
 }
 
-export default ProductAddToCart;
+export default data;
