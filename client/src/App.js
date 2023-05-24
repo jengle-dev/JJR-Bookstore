@@ -9,11 +9,10 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import { ChakraProvider } from '@chakra-ui/react';
 
 import Home from './pages/Home';
 import Contact from './pages/Contact';
-// import Search from './pages/SearchBook';
+//import Login from './pages/Login';
 import About from './pages/About';
 // import NavMenu from './components/NavMenu';
 import Footer from './components/Footer.tsx';
