@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const FormStyle = styled.form`
   width: 100%;
+  font-family: 
   .form-group {
     width: 100%;
     margin-top: 2rem;

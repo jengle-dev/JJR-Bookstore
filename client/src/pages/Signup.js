@@ -16,20 +16,29 @@ import {
   } from '@chakra-ui/react';
   import { useState } from 'react';
   import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+
+  import styled from 'styled-components';
+
+  const SignupStyles = styled.div`
+  Input {
+    background-color: var(--ecruPrincess);
+  }
+  `;
   
   export default function SignupCard() {
     const [showPassword, setShowPassword] = useState(false);
   
-    return (
+return (
+    <SignupStyles>
       <Flex
-        minH={'100vh'}
+        minH={'80vh'}
         align={'center'}
         justify={'center'}
         bg={useColorModeValue('ecruPrincess.900', 'taupeToad.900')}>
         <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
           <Stack align={'center'}>
             <Heading fontSize={'4xl'} textAlign={'center'}>
-              Sign up
+              Sign up to Start Reading!
             </Heading>
           </Stack>
           <Box
@@ -78,12 +87,12 @@ import {
                   bg={'oliveCoat.900'}
                   color={'ivoryGoddess.900'}
                   _hover={{
-                    bg: 'oliveCoat.900',
+                    bg: 'mossyRock.900',
                   }}>
                   Sign up
                 </Button>
               </Stack>
-              <Stack pt={6}>
+              <Stack pt={4}>
                 <Text align={'center'}>
                   Already a user? <Link color={'oliveCoat.900'}>Login</Link>
                   {/* Need to link this back to Login */}
@@ -93,5 +102,6 @@ import {
           </Box>
         </Stack>
       </Flex>
+      </SignupStyles>
     );
   }
