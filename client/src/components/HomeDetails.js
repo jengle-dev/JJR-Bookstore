@@ -1,6 +1,4 @@
 import * as React from "react";
-import { useState } from 'react';
-
 import openBookPic from '../images/photos/olga-tutunaru-JMATuFkXeHU-unsplash.jpg';
 import {
   Flex,
@@ -15,12 +13,11 @@ import {
 
 export default function HomeDetails() {
   return (
-    <div>
+    <div border="solid">
       <Box bg={"mossyRock.900"} w="100%" p={4} color={"ivoryGoddess.900"} h="8px"></Box>
       <Flex as="section" className="home-details" bg={"ecruPrincess.900"}>
         <Container maxW="container.xl" marginTop='25px'>
           <Stack direction="row">
-
             <Image
               mt='15px'
               mb='50px'
@@ -42,11 +39,11 @@ export default function HomeDetails() {
       <Divider color='mossyRock.900' border='solid' />
       <Flex as="section" className="home-details" bg={"ecruPrincess.900"}>
         <Stack direction="row">
-        <Text mt="30px" p="30px">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </Text>
-            </Stack>
-            </Flex>
+          <Text mt="30px" p="30px">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          </Text>
+        </Stack>
+      </Flex>
     </div>
   );
 }
