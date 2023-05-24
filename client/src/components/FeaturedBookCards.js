@@ -4,7 +4,7 @@ const data = {
     {
       id: '1',
       imageURL:
-        './assets/featuredBooks/1984.jpg',
+        './images/featuredBooks/1984.jpg',
       name: 'Nineteen-Eighty-Four',
       author: 'George Orwell',
       description: 'Nineteen Eighty-Four: A Novel, often referred to as 1984, is a dystopian social science fiction novel by the English novelist George Orwell (the pen name of Eric Arthur Blair). It was published on 8 June 1949 by Secker & Warburg as Orwell\'s ninth and final book completed in his lifetime. Thematically, Nineteen Eighty-Four centres on the consequences of totalitarianism, mass surveillance, and repressive regimentation of persons and behaviours within society. Orwell, himself a democratic socialist, modelled the authoritarian government in the novel after Stalinist Russia. More broadly, the novel examines the role of truth and facts within politics and the ways in which they are manipulated.',
@@ -15,7 +15,7 @@ const data = {
     {
       id: '2',
       imageURL:
-        'client/src/featuredBooks/AmericanPrometheus.jpg',
+        '.images/featuredBooks/AmericanPrometheus.jpg',
       name: 'American Prometheus: The Triumph and Tragedy of J. Robert Oppenheimer',
       author: 'Kai Bird & Martin J. Sherwin',
       description: 'In this magisterial, acclaimed biography twenty-five years in the making, Kai Bird and Martin Sherwin capture Oppenheimer’s life and times, from his early career to his central role in the Cold War. This is biography and history at its finest, riveting and deeply informative. <br> \“A masterful account of Oppenheimer\’s rise and fall, set in the context of the turbulent decades of America’s own transformation. It is a tour de force.” —Los Angeles Times Book Review',

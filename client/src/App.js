@@ -18,6 +18,8 @@ import About from './pages/About';
 // import NavMenu from './components/NavMenu';
 import Footer from './components/Footer.tsx';
 import Navbar from './components/NavBar.tsx';
+// import FeaturedBooks from './components/Books';
+// import SingleBookCard from './components/SingleBookCard.tsx';
 
 // Extend the theme to include custom colors, fonts, etc
 // colorname.900
@@ -92,13 +94,13 @@ function App() {
               <Route path="/contact">
                 <Contact />
               </Route>
-              Search?
-              <Route path="/login">
-                <Login />
-              </Route>
-              {/* Search? */}
+              {/* <Route path="/search">
+                <Search />
+              </Route> */}
               <Route path="/">
                 <Home />
+                {/* <FeaturedBooks /> */}
+              {/* <SingleBookCard /> */}
               </Route>
             </Switch>
           </div>

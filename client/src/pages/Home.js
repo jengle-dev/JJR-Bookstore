@@ -1,18 +1,19 @@
 import React from 'react';
 import HomeDetails from '../components/HomeDetails';
-import SingleBookCard from '../components/SingleBookCard';
-//import { useQuery } from '@apollo/client';
+// import SingleBookCard from '../components/SingleBookCard.tsx';
+// import Books from '../components/Books';
 
 // background color: var(--ecruPrincess) -- do we like this as a general background color?
 
 const Home = () => {
   return (
-    <div>
+    <>
       {/* Displays the HomeDetails component */}
       <HomeDetails />
-      <SingleBookCard />
+      {/* <SingleBookCard /> */}
       {/* Displays the Featured Books Card Grid */}
-    </div>
+      {/* <Books /> */}
+    </>
   )
 };
 
