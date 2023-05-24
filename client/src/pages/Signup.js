@@ -1,99 +1,130 @@
-import {
-    Flex,
-    Box,
-    FormControl,
-    FormLabel,
-    Input,
-    InputGroup,
-    HStack,
-    InputRightElement,
-    Stack,
-    Button,
-    Heading,
-    Text,
-    useColorModeValue,
-    Link,
-  } from '@chakra-ui/react';
-  import { useState } from 'react';
-  import { ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
-  
-  export default function SignupCard() {
-    const [showPassword, setShowPassword] = useState(false);
-  
-    return (
-      <Flex
-        minH={'100vh'}
-        align={'center'}
-        justify={'center'}
-        bg={useColorModeValue('ecruPrincess.900', 'taupeToad.900')}>
-        <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
-          <Stack align={'center'}>
-            <Heading fontSize={'4xl'} textAlign={'center'}>
-              Sign up
-            </Heading>
-            <Text fontSize={'lg'} color={'licorice.900'}>
-              to enjoy all of our cool features ✌️
-            </Text>
-          </Stack>
-          <Box
-            rounded={'lg'}
-            bg={useColorModeValue('ivoryGoddess.900', 'taupeToad.900')}
-            boxShadow={'lg'}
-            p={8}>
-            <Stack spacing={4}>
-              <HStack>
-                <Box>
-                  <FormControl id="firstName" isRequired>
-                    <FormLabel>First Name</FormLabel>
-                    <Input type="text" />
-                  </FormControl>
-                </Box>
-                <Box>
-                  <FormControl id="lastName">
-                    <FormLabel>Last Name</FormLabel>
-                    <Input type="text" />
-                  </FormControl>
-                </Box>
-              </HStack>
-              <FormControl id="email" isRequired>
-                <FormLabel>Email address</FormLabel>
-                <Input type="email" />
-              </FormControl>
-              <FormControl id="password" isRequired>
-                <FormLabel>Password</FormLabel>
-                <InputGroup>
-                  <Input type={showPassword ? 'text' : 'password'} />
-                  <InputRightElement h={'full'}>
-                    <Button
-                      variant={'ghost'}
-                      onClick={() =>
-                        setShowPassword((showPassword) => !showPassword)
-                      }>
-                      {showPassword ? <ViewIcon /> : <ViewOffIcon />}
-                    </Button>
-                  </InputRightElement>
-                </InputGroup>
-              </FormControl>
-              <Stack spacing={10} pt={2}>
+import { Box, Button, Heading, Input, Text } from "@chakra-ui/react";
+
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
+
+import Auth from '../utils/auth';
+import styled from 'styled-components';
+
+
+const SignUpStyles = styled.div`
+background-color: var(--ecruPrincess);
+padding: 4rem;
+Input {
+  color: var(--licorice);
+  background-color: var(--ecruPrincess);
+}
+Button {
+  margin-top: 1rem;
+}
+`;
+
+const Signup = () => {
+  const [formState, setFormState] = useState({
+    username: '',
+    email: '',
+    password: '',
+  });
+  const [addUser, { error, data }] = useMutation(ADD_USER);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+
+    setFormState({
+      ...formState,
+      [name]: value,
+    });
+  };
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    console.log(formState);
+
+    try {
+      const { data } = await addUser({
+        variables: { ...formState },
+      });
+
+      Auth.login(data.addUser.token);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  return (
+    <SignUpStyles>
+    <Box display="flex" justifyContent="center" marginBottom="4">
+      <Box backgroundColor="ivoryGoddess.900" width="100%" maxWidth="lg">
+        <Box borderWidth="1px" borderRadius="md" overflow="hidden">
+          <Heading
+            as="h4"
+            color="mossyRock.900"
+            padding="2"
+          >
+            Sign Up
+          </Heading>
+          <Box padding="4">
+            {data ? (
+              <Text>
+                Success! You may now head{" "}
+                <Link to="/">back to the homepage.</Link>
+              </Text>
+            ) : (
+              <Box as="form" onSubmit={handleFormSubmit}>
+                <Input
+                  className="form-input"
+                  placeholder="Your username"
+                  name="username"
+                  type="text"
+                  value={formState.name}
+                  onChange={handleChange}
+                  marginBottom="4"
+                />
+                <Input
+                  className="form-input"
+                  placeholder="Your email"
+                  name="email"
+                  type="email"
+                  value={formState.email}
+                  onChange={handleChange}
+                  marginBottom="4"
+                />
+                <Input
+                  className="form-input"
+                  placeholder="******"
+                  name="password"
+                  type="password"
+                  value={formState.password}
+                  onChange={handleChange}
+                  marginBottom="4"
+                />
                 <Button
                   loadingText="Submitting"
                   size="lg"
                   bg={'oliveCoat.900'}
                   color={'ivoryGoddess.900'}
                   _hover={{
-                    bg: 'oliveCoat.900',
+                    bg: 'mossyRock.900',
                   }}>
-                  Sign up
-                </Button>
-              </Stack>
-              <Stack pt={6}>
-                <Text align={'center'}>
-                  Already a user? <Link color={'oliveCoat.900'}>Login</Link>
-                </Text>
-              </Stack>
-            </Stack>
+                  Submit
+                  </Button>
+              </Box>
+            )}
+
+            {error && (
+              <Box my="3" p="3" backgroundColor="muddyRiver.900" color="ivoryGoddess.900">
+                {error.message}
+              </Box>
+            )}
           </Box>
-        </Stack>
-      </Flex>
-    );
-  }
+        </Box>
+      </Box>
+    </Box>
+    </SignUpStyles>
+  );
+};
+
+export default Signup;
