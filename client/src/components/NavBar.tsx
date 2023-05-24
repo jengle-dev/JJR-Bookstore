@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import JJRLogo from "../images//logos/Circle-Taupe-Mossy-Full-Logo-Green-Border.png";
+import JJRLogo from "../images/logos/Circle-Taupe-Mossy-Full-Logo-Green-Border.png";
 import { useHistory } from "react-router-dom";
 import {
   Box,
