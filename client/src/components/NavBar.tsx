@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import About from "./pages/About";
-
-import JJRLogo from "../assets/logos/Circle-Taupe-Mossy-Full-Logo-Green-Border.png";
-import { NavLink, Redirect, useHistory } from "react-router-dom";
+import JJRLogo from "../images/logos/Circle-Taupe-Mossy-Full-Logo-Green-Border.png";
+import { useHistory } from "react-router-dom";
 import {
   Box,
   Center,
@@ -102,7 +100,7 @@ export default function Navbar() {
             fontWeight={600}
             color={"ivoryGoddess.900"}
             bg={"oliveCoat.900"}
-            href={"/#"}
+            href={"/login"}
             _hover={{
               bg: "mossyRock.900",
             }}
@@ -116,7 +114,7 @@ export default function Navbar() {
             fontWeight={600}
             color={"ivoryGoddess.900"}
             bg={"muddyRiver.900"}
-            href={"/#"}
+            href={"/signup"}
             _hover={{
               bg: "mossyRock.900",
             }}
@@ -303,6 +301,8 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "About Us",
     href: "/about",
   },
+{label: "Contact Us",
+    href: "/contact"},
   {
     label: "Profile",
     children: [
