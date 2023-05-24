@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import { Button } from "@chakra-ui/react";
+
 const FormStyle = styled.form`
   background-color: var(--taupeToad);
   padding-top: 2rem;
@@ -14,32 +16,26 @@ const FormStyle = styled.form`
   }
   input,
   textarea {
-    width: 95%;
+    width: 80%;
     font-size: 1.5rem;
     padding: 1rem;
     color: var(--licorice);
     background-color: var(--ivoryGoddess);
     border-radius: 8px;
     margin: 1rem;
+    outline: none;
   }
   textarea {
     min-height: 250px;
     resize: vertical;
   }
-  button[type='submit'] {
-    background-color: var(--oliveCoat);
-    color: var(--ivoryGoddess);
+  Button {
     font-size: 1.5rem;
-    display: inline-block;
-    margin-bottom: 4rem;
-    padding: 1rem 4rem;
     border-radius: 8px;
     cursor: pointer;
+    padding: 2rem 4rem;
+    margin-bottom: 2rem;
   }
-  .button:hover {
-    background-color:(--mossyRock);
-    transition: 0.7s;
-}
 `;
 
 export default function ContactForm() {
@@ -52,6 +48,7 @@ export default function ContactForm() {
         <div className="form-group">
           <label htmlFor="name">
             Name
+            <br></br>
             <input
               type="text"
               id="name"
@@ -64,6 +61,7 @@ export default function ContactForm() {
         <div className="form-group">
           <label htmlFor="email">
             Email
+            <br></br>
             <input
               type="email"
               id="email"
@@ -76,6 +74,7 @@ export default function ContactForm() {
         <div className="form-group">
           <label htmlFor="message">
             Message
+            <br></br>
             <textarea
               type="text"
               id="message"
@@ -85,7 +84,16 @@ export default function ContactForm() {
             />
           </label>
         </div>
-        <button type="submit" action="mailto:teamjjrbooks@gmail.com">Send</button>
+        <Button
+          loadingText="Submitting"
+          size="lg"
+          bg={'oliveCoat.900'}
+          color={'ivoryGoddess.900'}
+          _hover={{
+          bg: 'mossyRock.900',
+          }}>
+          Submit
+        </Button>
       </FormStyle>
     </>
   );
