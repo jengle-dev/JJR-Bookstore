@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import { Button } from "@chakra-ui/react";
 
 const FormStyle = styled.form`
-  background-color: var(--taupeToad);
+  background-color: var(--ecruPrincess);
   padding-top: 2rem;
   width: 100%;
-  font-family: 
+  font-family: 'Roboto Slab';
   .form-group {
     width: 100%;
   }
