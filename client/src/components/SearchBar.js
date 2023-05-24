@@ -3,6 +3,7 @@ import { useState } from 'react';
 import React from 'react';
 import styled from 'styled-components';
 import { IconButton } from '@chakra-ui/react';
+import { SearchIcon } from '@chakra-ui/icons';
 
 
 import '../index.css';
