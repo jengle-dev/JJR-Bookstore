@@ -10,8 +10,9 @@ import Auth from '../utils/auth';
 
 const LoginStyles = styled.div`
 background-color: var(--ecruPrincess);
+padding-bottom: 12rem;
 Input {
-  width: 50%;
+  width: 40%;
   background-color: var(--ivoryGoddess);
   color: var(--licorice);
   margin: 1rem;
