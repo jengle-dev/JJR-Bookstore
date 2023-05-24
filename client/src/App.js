@@ -12,7 +12,8 @@ import { setContext } from '@apollo/client/link/context';
 
 import Home from './pages/Home';
 import Contact from './pages/Contact';
-//import Login from './pages/Login';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 import About from './pages/About';
 // import NavMenu from './components/NavMenu';
 import Footer from './components/Footer.tsx';
@@ -92,6 +93,12 @@ function App() {
               </Route>
               <Route path="/contact">
                 <Contact />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="/signup">
+                <Signup />
               </Route>
               {/* <Route path="/search">
                 <Search />

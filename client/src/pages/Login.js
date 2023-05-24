@@ -4,8 +4,17 @@ import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
 import { Box, Button, Heading, Input } from "@chakra-ui/react";
+import styled from 'styled-components';
 
 import Auth from '../utils/auth';
+
+const LoginStyles = styled.div`
+card-body {
+  margin: 12rem;
+}
+`;
+
+
 
 export default function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -43,7 +52,7 @@ export default function Login(props) {
   };
 
   return (
-      <main className="flex-row justify-center mb-4">
+    <LoginStyles>
         <Box className="col-12 col-lg-10">
           <Box className="card">
             <Heading as="h4" size="md">
@@ -91,6 +100,6 @@ export default function Login(props) {
             </Box>
           </Box>
         </Box>
-      </main>
+      </LoginStyles>
     );
   };

@@ -31,9 +31,6 @@ import {
             <Heading fontSize={'4xl'} textAlign={'center'}>
               Sign up
             </Heading>
-            <Text fontSize={'lg'} color={'licorice.900'}>
-              to enjoy all of our cool features ✌️
-            </Text>
           </Stack>
           <Box
             rounded={'lg'}
@@ -89,6 +86,7 @@ import {
               <Stack pt={6}>
                 <Text align={'center'}>
                   Already a user? <Link color={'oliveCoat.900'}>Login</Link>
+                  {/* Need to link this back to Login */}
                 </Text>
               </Stack>
             </Stack>
