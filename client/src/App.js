@@ -5,7 +5,7 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 import Home from './pages/Home';
 import Contact from './pages/Contact';
-// import Search from './pages/SearchBook';
+import Search from './pages/SearchBook';
 import About from './pages/About';
 // import NavMenu from './components/NavMenu';
 import Footer from './components/Footer.tsx';
@@ -65,7 +65,9 @@ function App() {
               <Route path="/contact">
                 <Contact />
               </Route>
-              Search?
+              <Route path="/search">
+                <Search />
+              </Route>
               <Route path="/">
                 <Home />
               </Route>
