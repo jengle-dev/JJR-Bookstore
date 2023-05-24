@@ -2,6 +2,9 @@ const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
 
+const { authMiddleware } = require('./utils/auth');
+const bodyParser = require('body-parser');
+
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
@@ -14,6 +17,7 @@ const server = new ApolloServer({
   introspection: true,
   typeDefs,
   resolvers,
+  context: authMiddleware,
 
   formatError: (error) => error,
 
