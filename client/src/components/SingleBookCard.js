@@ -1,28 +1,29 @@
 import React from 'react';
-import FeaturedBookCards from './FeaturedBookCards';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Card, CardBody, CardFooter, ButtonGroup, Button, Image, Stack, Heading, Text, Divider } from '@chakra-ui/react';
 import data from './FeaturedBookCards';
 
 export default function SingleBookCard() {
   <>
-    {data.map((card, index) => (
-      <Card key={index} maxW='sm'>  <CardBody>
-        <Image
-          src={card.imageSrc}
-          alt='Book Cover'
-          borderRadius='lg'
-        />
-        <Stack mt='6' spacing='3'>
-          <Heading size='md'>{card.title}</Heading>
-          <Text>
-            {card.description}
-          </Text>
-          <Text color='blue.600' fontSize='2xl'>
-            {card.price}
-          </Text>
-        </Stack>
-      </CardBody>
+    {data.featuredBooks.forEach((book, index) => (
+      <Card key={index} maxW='sm'>
+        <CardBody>
+          <Image
+            src={book.imageSrc}
+            alt='Book cover'
+            borderRadius='lg'
+          />
+          <Stack mt='6' spacing='3'>
+            <Heading className='h4'>{book.name}</Heading>
+            <Heading className='h5'>{book.author}</Heading>
+            <Text>
+              {book.description}
+            </Text>
+            <Text color='blue.600' fontSize='2xl'>
+              {book.price}
+            </Text>
+          </Stack>
+        </CardBody>
         <Divider />
         <CardFooter>
           <ButtonGroup spacing='2'>
@@ -34,7 +35,24 @@ export default function SingleBookCard() {
             </Button>
           </ButtonGroup>
         </CardFooter>
+          {/* Log book details */}
+          {console.log("ID: ", book.id)}
+          {console.log("ImageURL: ", book.imageURL)}
+          {console.log("Name: ", book.name)}
+          {console.log("Author: ", book.author)}
+          {console.log("Price: ", book.price)}
+          {console.log("ISBN: ", book.isbn)}
+          {console.log("------------------------------------")}
       </Card>
     ))}
   </>
-}
+};
+
+// const data = {
+//   isNew: true,
+//   featuredBooks: [
+//     // Book Objects
+//   ]
+// };
+// // Iterate over each book in the featuredBooks array
+
