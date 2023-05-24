@@ -100,7 +100,7 @@ export default function Navbar() {
             fontWeight={600}
             color={"ivoryGoddess.900"}
             bg={"oliveCoat.900"}
-            href={"/#"}
+            href={"/login"}
             _hover={{
               bg: "mossyRock.900",
             }}
@@ -114,7 +114,7 @@ export default function Navbar() {
             fontWeight={600}
             color={"ivoryGoddess.900"}
             bg={"muddyRiver.900"}
-            href={"/#"}
+            href={"/signup"}
             _hover={{
               bg: "mossyRock.900",
             }}
@@ -301,6 +301,8 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "About Us",
     href: "/about",
   },
+{label: "Contact Us",
+    href: "/contact"},
   {
     label: "Profile",
     children: [

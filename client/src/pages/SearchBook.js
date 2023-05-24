@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 //import Chakra styling
 import { Container, Flex, Box, Input, IconButton, Form, Row, Col, Button, Card, Text } from '@chakra-ui/react';
-import Auth from '../utils/auth';
+// import Auth from '../utils/auth';
 import { SearchBar } from '../components/SearchBar';
 import { useMutation } from '@apollo/client';
 import { SAVE_FAV_BOOK } from '../utils/mutations';

@@ -5,12 +5,12 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 
 import Home from './pages/Home';
 import Contact from './pages/Contact';
-import Search from './pages/SearchBook';
+// import Search from './pages/SearchBook';
 import About from './pages/About';
 // import NavMenu from './components/NavMenu';
 import Footer from './components/Footer.tsx';
 import Navbar from './components/NavBar.tsx';
-import FeaturedBooks from './components/Books';
+// import FeaturedBooks from './components/Books';
 // import SingleBookCard from './components/SingleBookCard.tsx';
 
 // Extend the theme to include custom colors, fonts, etc
@@ -67,12 +67,12 @@ function App() {
               <Route path="/contact">
                 <Contact />
               </Route>
-              <Route path="/search">
+              {/* <Route path="/search">
                 <Search />
-              </Route>
+              </Route> */}
               <Route path="/">
                 <Home />
-                <FeaturedBooks />
+                {/* <FeaturedBooks /> */}
               {/* <SingleBookCard /> */}
               </Route>
             </Switch>
