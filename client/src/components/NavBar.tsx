@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import About from './pages/About';
+
 import JJRLogo from '../assets/logos/Circle-Taupe-Mossy-Full-Logo-Green-Border.png';
-import NavItem from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {
     Box,
     Flex,
@@ -87,11 +89,11 @@ export default function Navbar() {
                         fontWeight={600}
                         color={'ivoryGoddess.900'}
                         bg={'oliveCoat.900'}
-                        href={'/signup'}
+                        href={'/login'}
                         _hover={{
                             bg: 'mossyRock.900',
                         }}>
-                        Sign In
+                        Log In
                     </Button>
                     <Button
                         as={'a'}
@@ -129,7 +131,7 @@ const DesktopNav = () => {
                         <PopoverTrigger>
                             <Link
                                 p={2}
-                                href={navItem.href ?? '/login'}
+                                href={navItem.href ?? ''}
                                 fontSize={'sm'}
                                 fontWeight={500}
                                 color={linkColor}
@@ -270,9 +272,11 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
     {
         label: 'Search',
+        href: '/search',
     },
     {
         label: 'About Us',
+        href: '/about',
     },
     {
         label: 'Profile',
