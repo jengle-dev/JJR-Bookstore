@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 //import Chakra styling
-import { Container, Form, Row, Col, Button, Card } from '@chakra-ui/react';
+import { Container, Flex, Box, Input, IconButton, Form, Row, Col, Button, Card, Text } from '@chakra-ui/react';
 import Auth from '../utils/auth';
+import { SearchBar } from '../components/SearchBar';
 import { useMutation } from '@apollo/client';
-import { SAVE_BOOK } from '../utils/mutations';
+import { SAVE_FAV_BOOK } from '../utils/mutations';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
 
 // Component below searches in the OpenLibrary to return the ISBN which is the searchInput data inserted below https://openlibrary.org/search.json?q=*
@@ -15,7 +16,10 @@ const SearchBooks = () => {
   // create state to hold saved bookId values
   const [savedBookIds, setSavedBookIds] = useState(getSavedBookIds());
 
-  const [saveBook] = useMutation(SAVE_BOOK);
+
+  // // Allows a user to add a searched book to their favorites list - list located on the user profile page
+  // const [saveFavBook] = useMutation(SAVE_FAV_BOOK);
+
 
   // set up useEffect hook to save `savedBookIds` list to localStorage on component unmount
   useEffect(() => {
@@ -50,7 +54,8 @@ const SearchBooks = () => {
         }));
 
         // returns top 3 ISBN values from Open Library search
-        console.log(bookSearch[0, 1, 2]);  
+        const results = [0, 1, 2];
+        setSearchedBooks(results);
 
     //search Google Books with the 3 returned ISBN values
       const searchGoogleBooks = fetch(
@@ -65,7 +70,6 @@ const SearchBooks = () => {
       const { items } = await response.json();
 
       const bookData = items.map((book) => ({
-        //need to return up to 10 kinds to get multiple book titles, a single ISBN will pull back multiple books - filter duplicate title and author
         bookId: book.id,
         image: book.volumeInfo.imageLinks?.thumbnail || '',
         title: book.volumeInfo.title,
@@ -83,72 +87,20 @@ const SearchBooks = () => {
   };
 
   //where our components get inserted jsx
-  // Copied from project 21 but using Chakra UI
   return (
-    <div>
-    <>
-      <div className="text-light bg-dark p-5">
-        <Container>
-          <h1>Search for Books!</h1>
-          <Form onSubmit={handleFormSubmit}>
-            <Row>
-              <Col xs={12} md={8}>
-                <Form.Control
-                  name='searchInput'
-                  value={searchInput}
-                  onChange={(e) => setSearchInput(e.target.value)}
-                  type='text'
-                  size='lg'
-                  placeholder='Search for a book'
-                />
-              </Col>
-              <Col xs={12} md={4}>
-                <Button type='submit' variant='success' size='lg'>
-                  Submit Search
-                </Button>
-              </Col>
-            </Row>
-          </Form>
-        </Container>
-      </div>
-
-      <Container>
-        <h2 className='pt-5'>
-          {searchedBooks.length
-            ? `Viewing ${searchedBooks.length} results:`
-            : 'Search for a book to begin'}
-        </h2>
-        <Row>
-          {searchedBooks.map((book) => {
-            return (
-              <Col md="4">
-                <Card key={book.bookId} border='dark'>
-                  {book.image ? (
-                    <Card.Img src={book.image} alt={`The cover for ${book.title}`} variant='top' />
-                  ) : null}
-                  <Card.Body>
-                    <Card.Title>{book.title}</Card.Title>
-                    <p className='small'>Authors: {book.authors}</p>
-                    <Card.Text>{book.description}</Card.Text>
-                    {Auth.loggedIn() && (
-                      <Button
-                        disabled={savedBookIds?.some((savedBookId) => savedBookId === book.bookId)}
-                        className='btn-block btn-info'
-                        onClick={() => handleSaveBook(book.bookId)}>
-                        {savedBookIds?.some((savedBookId) => savedBookId === book.bookId)
-                          ? 'This book has already been saved!'
-                          : 'Save this Book!'}
-                      </Button>
-                    )}
-                  </Card.Body>
-                </Card>
-              </Col>
-            );
-          })}
-        </Row>
-      </Container>
-    </>
-    </div>
+    <Flex height="100vh" alignItems="center" justifyContent="center" flexDirection="column">
+      <Box>
+        {SearchBar}
+      </Box>
+      {searchedBooks.length > 0 && (
+        <Box mt={4}>
+          <Text fontweight="bold">Top 3 Search Results:</Text>
+          {searchedBooks.map((results, index) => (
+            <Text key={index} mt={2}>{searchedBooks}</Text>
+          ))}
+        </Box>
+      )}
+    </Flex>
   );
 };
 
