@@ -2,53 +2,96 @@ import { gql } from '@apollo/client';
 
 // LOGIN_USER
 export const LOGIN_USER = gql`
-mutation loginUser($email: String!, $password: String!) {
-    loginUser(email: $email, password: $password) {
+    mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      user {
         _id
-        email
-        password
+      }
     }
-}
+  }
 `;
-//User Profile
-//Name, Phone, Email, Preferred Contact, Did want newsletter?, password, ability to update name, password, email, phone. Access favorites list, adding a book to the cart, removing book from the cart, add/remove from favorites.
 
-
-// ADD_USER  -- not sure if this is correct, if the book count and saved books would be necessary in this mutation 
+// Add or sign-up a new user - need to check that it goes into the db
 export const ADD_USER = gql`
-mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
-        _id
-        username
-        email
-        password
-        # bookCount
-        # savedBooks
+    mutation addUser($username: String!, $email: String!, $password: String!) {
+        addUser(username: $username, email: $email, password: $password) {
+            userId
+            username
+            email
+            password
+        }
     }
-}
 `;
 
-// SAVE_BOOK
-export const SAVE_BOOK = gql`
-mutation saveBook( $authors: [String!]!, $description: String, $title: String!, $bookId: String!, $image: String, $link: String) {
-    saveBook(authors: $authors, description: $description, title: $title, bookId: $bookId, image: $image, link: $link) {
-        _id
-        authors
-        description
-        bookId
-        title
-        image
-        link
-    }
-}
-`;
+// Allows a user to edit/update certain fields
+// export const UPDATE_USER_PROFILE = gql`
+//     mutation updateUserProfile($username: String!, $email: String!, $password: String!, $phoneNumber: String!) {
+//         updateUserProfile(username: $username, email: $email, password: $password, phoneNumber: $phoneNumber) {
+//             userId
+//             username
+//             email
+//             password
+//             phoneNumber
+//         }
+//     }
+// `;
 
-// REMOVE_BOOK -- does it know to go back to typeDefs to get associated user to compare current user?
-export const REMOVE_BOOK = gql`
-mutation removeBook($bookId: String!) {
-    removeBook(bookId: $bookId) {
-        _id
-        bookId
-    }
-}
-`;
+// Save a favorite book to the user's profile
+// export const SAVE_FAV_BOOK = gql`
+//     mutation saveFavBook( $authors: [String!]!, $description: String, $title: String!, $bookId: String!, $image: String, $link: String) {
+//         saveBook(authors: $authors, description: $description, title: $title, bookId: $bookId, image: $image, link: $link) {
+//             userId
+//             authors
+//             description
+//             bookId
+//             title
+//             image
+//             link
+//         }
+//     }
+// `;
+
+// Removes a book from a user's favorites list
+// export const REMOVE_FAVBOOK = gql`
+//     mutation removeFavBook($userId: String!, $bookId: String!) {
+//         removeBook(userId: $userId, bookId: $bookId) {
+//             bookId
+//             userId
+//         }
+//     }
+// `;
+
+// Add product to shopping cart
+// export const ADD_TO_CART = gql`
+//     mutation addToCart($productId: ID!, $quantity: Int!) {
+//         addToCart(productId: $productId, quantity: $quantity) {
+//             userId
+//             productId
+//             quantity
+//         }
+//     }
+// `;
+
+// Remove product from shopping cart
+// export const REMOVE_FROM_CART = gql`
+//     mutation removeFromCart($productId: ID!, $quantity: Int!, $userId: ID!) {
+//         removeFromCart(productId: $productId, quantity: $quantity, userId: $userId) {
+//             productId
+//             quantity
+//             userId
+//         }
+//     }
+// `;
+
+// Checkout/purchase products in cart array
+// export const CHECKOUT = gql`
+//     mutation checkout($productId: ID!, $quantity: Int!, $userId: ID!) {
+//         checkout(productId: $productId, quantity: $quantity, userId: $userId) {
+//             productId
+//             quantity
+//             userId
+//             cartItems
+//         }
+//     }
+// `;

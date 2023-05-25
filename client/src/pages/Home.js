@@ -1,13 +1,22 @@
 import React from 'react';
-//import { useQuery } from '@apollo/client';
+import HomeDetails from '../components/HomeDetails';
+// import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
+// import SingleBookCard from '../components/SingleBookCard.tsx';
+// import Books from '../components/Books';
 
+// background color: var(--ecruPrincess) -- do we like this as a general background color?
 
 const Home = () => {
   return (
-    <div>
-      <div>Home</div>
-    </div>
+    <>
+      {/* Displays the HomeDetails component */}
+      <HomeDetails />
+
+      {/* <SingleBookCard /> */}
+      {/* Displays the Featured Books Card Grid */}
+      {/* <Books /> */}
+    </>
   )
-}
+};
 
 export default Home;

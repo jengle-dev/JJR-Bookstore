@@ -3,7 +3,8 @@ import { useState } from 'react';
 import React from 'react';
 import styled from 'styled-components';
 import { IconButton } from '@chakra-ui/react';
-
+import { SearchIcon } from '@chakra-ui/icons';
+import { SearchBookAPI } from './SearchBookAPI';
 
 import '../index.css';
 
@@ -32,7 +33,7 @@ input: focus {
     outline: none;
 }`;
 
-export const SearchBar = ({ setResults }) => {
+export const SearchBar = ({ SearchBookAPI }) => {
     const [input, setInput] = useState("");
 
     const fetchData = (value) => {
@@ -47,21 +48,27 @@ export const SearchBar = ({ setResults }) => {
                     user.name.toLowerCase().includes(value)
                 );
             });
-            setResults(results);
+            SearchBookAPI(results);
         });
     };
 
     const handleChange = (value) => {
         setInput(value);
-        fetchData(value);
+        // fetchData(value);
+    };
+
+    const buttonPress = (value) => {
+    console.log(input)
+    SearchBookAPI(input);
     };
 
     return (
         <SearchBarStyle>
             <div className ="input-wrapper">
-                <IconButton colorScheme='oliveCoat' aria-label='Search database' icon={<SearchIcon />} />
+                <IconButton colorScheme='oliveCoat' aria-label='Search database' icon={<SearchIcon />} onClick={(e) => buttonPress(e.target.value)} />
                 <input placeholder="Type to search..." value={input} onChange={(e) => handleChange(e.target.value)} />
             </div>
         </SearchBarStyle>
     );
 };
+
