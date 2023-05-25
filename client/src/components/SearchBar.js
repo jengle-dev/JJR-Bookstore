@@ -57,8 +57,8 @@ export const SearchBar = ({ searchBooks }) => {
     };
 
     const buttonPress = (value) => {
-    console.log('what up?')
-        fetchData(value);
+    console.log(input)
+        searchBooks(input);
     };
 
     return (
