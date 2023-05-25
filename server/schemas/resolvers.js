@@ -34,27 +34,27 @@ const resolvers = {
             return { token, user };
         },
     
-        saveFavBook: async (parent, { book }, context) => {
-            if (context.user) {
-                return await User.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $addToSet: { savedBooks: { book } } },
-                    { new: true, runValidators: true }
-                ).populate("savedFavBooks");
-            }
-            throw new AuthenticationError("Please login now.");
-        },
+        // saveFavBook: async (parent, { book }, context) => {
+        //     if (context.user) {
+        //         return await User.findOneAndUpdate(
+        //             { _id: context.user._id },
+        //             { $addToSet: { savedBooks: { book } } },
+        //             { new: true, runValidators: true }
+        //         ).populate("savedFavBooks");
+        //     }
+        //     throw new AuthenticationError("Please login now.");
+        // },
 
-        removeFavBook: async (parent, { bookId }, context) => {
-            if (context.user) {
-                return await User.findOneAndUpdate(
-                    { _id: context.user._id },
-                    { $pull: { savedFavBooks: { bookId: bookId } } },
-                    { new: true }
-                );
-            }
-            throw new AuthenticationError("Please login now.");
-        }
+        // removeFavBook: async (parent, { bookId }, context) => {
+        //     if (context.user) {
+        //         return await User.findOneAndUpdate(
+        //             { _id: context.user._id },
+        //             { $pull: { savedFavBooks: { bookId: bookId } } },
+        //             { new: true }
+        //         );
+        //     }
+        //     throw new AuthenticationError("Please login now.");
+        // }
     }
 }
 
