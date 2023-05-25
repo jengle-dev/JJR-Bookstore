@@ -168,6 +168,19 @@ h2.landing {
   }
 }
 
+/* Icons */
+.material-symbols-outlined {
+  background-color: var(--mossyRock) ;
+  font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 48;
+}
+
+.material-symbols-outlined:hover {
+  background-color: var(--oliveCoat);
+}
 
 /* responsive */
 /* Standardized Chakra UI breakpoints and sizes built in */
