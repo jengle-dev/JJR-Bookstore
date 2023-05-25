@@ -4,8 +4,25 @@ import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
 import { Box, Button, Heading, Input } from "@chakra-ui/react";
+import styled from 'styled-components';
 
 import Auth from '../utils/auth';
+
+const LoginStyles = styled.div`
+background-color: var(--ecruPrincess);
+padding-bottom: 12rem;
+Input {
+  width: 40%;
+  background-color: var(--ivoryGoddess);
+  color: var(--licorice);
+  margin: 1rem;
+  margin-left: 10rem;
+  margin-right: 10rem;
+}
+Button {
+  margin-top: 1rem;
+}
+`;
 
 export default function Login(props) {
   const [formState, setFormState] = useState({ email: '', password: '' });
@@ -43,10 +60,10 @@ export default function Login(props) {
   };
 
   return (
-      <main className="flex-row justify-center mb-4">
-        <Box className="col-12 col-lg-10">
-          <Box className="card">
-            <Heading as="h4" size="md">
+    <LoginStyles>
+        <Box className="col-12 col-lg-10" padding = {4}>
+          <Box className="card" padding = {4}>
+            <Heading as="h4" size="xl" padding = {4}>
               Login
             </Heading>
             <Box className="card-body">
@@ -73,24 +90,28 @@ export default function Login(props) {
                     value={formState.password}
                     onChange={handleChange}
                   />
+                  <br></br>
                   <Button
-                    className="btn btn-block btn-primary"
-                    style={{ cursor: "pointer" }}
-                    type="submit"
-                  >
-                    Submit
+                  loadingText="Submitting"
+                  size="lg"
+                  bg={'oliveCoat.900'}
+                  color={'ivoryGoddess.900'}
+                  _hover={{
+                    bg: 'mossyRock.900',
+                  }}>
+                  Submit
                   </Button>
                 </form>
               )}
   
               {error && (
-                <Box className="my-3 p-3 bg-danger text-white">
+                <Box>
                   {error.message}
                 </Box>
               )}
             </Box>
           </Box>
         </Box>
-      </main>
+      </LoginStyles>
     );
   };

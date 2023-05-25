@@ -9,7 +9,8 @@ import {
   HStack,
   Container,
   Box,
-  Divider
+  Divider,
+  SimpleGrid
 } from "@chakra-ui/react";
 import CardElementOnly from "./CardElementOnly";
 import FeaturedBooks from "./Books";
@@ -57,7 +58,9 @@ export default function HomeDetails() {
         </Stack>
       </Flex>
       {/* <FeaturedBooks /> */}
+      <Flex >
       <SingleBookCard />
+      </Flex>
 
     </div>
   );

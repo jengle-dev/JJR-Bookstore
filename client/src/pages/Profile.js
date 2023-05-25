@@ -10,4 +10,4 @@ const Profile = () => {
   )
 }
 
-export default Cart;
+export default Profile;
