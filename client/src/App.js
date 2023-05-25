@@ -18,6 +18,7 @@ import About from './pages/About';
 // import NavMenu from './components/NavMenu';
 import Footer from './components/Footer.tsx';
 import Navbar from './components/NavBar.tsx';
+import { SearchBooks } from './pages/SearchBook';
 // import FeaturedBooks from './components/Books';
 // import SingleBookCard from './components/SingleBookCard.tsx';
 
@@ -100,9 +101,9 @@ function App() {
               <Route path="/signup">
                 <Signup />
               </Route>
-              {/* <Route path="/search">
-                <Search />
-              </Route> */}
+              <Route path="/search">
+                <SearchBooks />
+              </Route>
               <Route path="/">
                 <Home />
                 {/* <FeaturedBooks /> */}

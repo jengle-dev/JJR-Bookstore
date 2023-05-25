@@ -8,13 +8,13 @@ export const LOGIN_USER = gql`
             username
             email
             password
-            phoneNumber
-            savedFavBooks
+            # phoneNumber
+            # savedFavBooks
         }
     }
 `;
 
-// Add or sign-up a new user
+// Add or sign-up a new user - need to check that it goes into the db
 export const ADD_USER = gql`
     mutation addUser($username: String!, $email: String!, $password: String!) {
         addUser(username: $username, email: $email, password: $password) {
@@ -40,7 +40,7 @@ export const UPDATE_USER_PROFILE = gql`
 `;
 
 // Save a favorite book to the user's profile
-export const SAVE_FAVBOOK = gql`
+export const SAVE_FAV_BOOK = gql`
     mutation saveFavBook( $authors: [String!]!, $description: String, $title: String!, $bookId: String!, $image: String, $link: String) {
         saveBook(authors: $authors, description: $description, title: $title, bookId: $bookId, image: $image, link: $link) {
             userId
