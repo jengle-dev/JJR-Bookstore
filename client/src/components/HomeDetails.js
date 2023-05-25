@@ -51,7 +51,7 @@ export default function HomeDetails() {
       <Flex as="section" className="featured" bg={"ecruPrincess.900"}>
         <Stack direction="row" flexWrap='wrap'>
           <Text mt="30px" p="30px" align="center" textAlign='center' fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
-            <h2 className="landing" align="center"> Peep your eyes at these Featured Books! </h2>
+ Peep your eyes at these Featured Books!
           </Text>
 
         </Stack>

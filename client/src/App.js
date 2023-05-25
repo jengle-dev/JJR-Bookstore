@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
- 
+
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'; //used to route navMenu components
 import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  createHttpLink,
+  createHttpLink, 
+  gql,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 

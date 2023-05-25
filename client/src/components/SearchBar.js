@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { IconButton } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
+import { SearchBookAPI } from './SearchBookAPI';
 
 import '../index.css';
 
@@ -32,7 +33,7 @@ input: focus {
     outline: none;
 }`;
 
-export const SearchBar = ({ searchBooks }) => {
+export const SearchBar = ({ SearchBookAPI }) => {
     const [input, setInput] = useState("");
 
     const fetchData = (value) => {
@@ -47,7 +48,7 @@ export const SearchBar = ({ searchBooks }) => {
                     user.name.toLowerCase().includes(value)
                 );
             });
-            searchBooks(results);
+            SearchBookAPI(results);
         });
     };
 
@@ -58,7 +59,7 @@ export const SearchBar = ({ searchBooks }) => {
 
     const buttonPress = (value) => {
     console.log(input)
-        searchBooks(input);
+    SearchBookAPI(input);
     };
 
     return (

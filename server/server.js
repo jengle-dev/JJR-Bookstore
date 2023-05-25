@@ -1,46 +1,39 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
+const { gql } = require('apollo-server');
+const mongoose = require('mongoose');
 const path = require('path');
-
+require("dotenv").config();
 const { authMiddleware } = require('./utils/auth');
-const bodyParser = require('body-parser');
-
 const { typeDefs, resolvers } = require('./schemas');
-const db = require('./config/connection');
 
-// bodyParser.json is now deprecated. express.json uses middleware to parse JSON data from API calls and HTTP requests.
-app.use(express.json());
 
-const PORT = process.env.PORT || 3001;
 const app = express();
-const server = new ApolloServer({
-  introspection: true,
-  typeDefs,
-  resolvers,
-  context: authMiddleware,
+const PORT = process.env.PORT || 3001;
 
-  formatError: (error) => error,
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/jjr-bookstore').then(() => {
+  console.log("Connected to MongoDB!");
+})
+  .catch((error) => {
+    console.error('Error connecting to MongoDB:', error);
+  });
 
-  context: ({ req, res }) => {
-    return {
-      req,
-      res,
-    };
-  },
-});
+// Apply authMiddleware
+app.use(authMiddleware);
 
 // Create a new instance of an Apollo server with the GraphQL schema
-const startApolloServer = async () => {
-  await server.start();
-  server.applyMiddleware({ app, path: '/graphql' });
-  
-  db.once('open', () => {
-    app.listen(PORT, () => {
-      console.log(`API server running on port ${PORT}!`);
-      console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
-    })
-  })
-};
-  
-// Call the async function to start the server
-  startApolloServer();
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: ({ req, res }) => ({ req, res }),
+});
+
+// Apply ApolloServer middleware to Express app
+server.applyMiddleware({ app, path: '/graphql' });
+
+
+app.listen(PORT, () => {
+  console.log(`API MongoDB server running on port ${PORT}!`);
+  console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+});

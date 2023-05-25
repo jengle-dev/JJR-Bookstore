@@ -24,6 +24,7 @@
         "@emotion/styled": "^11.11.0",
         "@mui/icons-material": "^5.11.16",
         "apollo-server-express": "^2.15.0",
+        "dotenv": "^16.0.3",
         "framer-motion": "^10.12.12",
         "graphql": "^15.8.0",
         "mongodb": "3.6",
