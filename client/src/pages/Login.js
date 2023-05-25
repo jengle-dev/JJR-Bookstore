@@ -61,7 +61,7 @@ export default function Login(props) {
 
   return (
     <LoginStyles>
-        <Box className="col-12 col-lg-10" padding = {4}>
+        <Box padding = {4}>
           <Box className="card" padding = {4}>
             <Heading as="h4" size="xl" padding = {4}>
               Login
