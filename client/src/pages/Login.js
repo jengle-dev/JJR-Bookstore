@@ -98,7 +98,8 @@ export default function Login(props) {
                   color={'ivoryGoddess.900'}
                   _hover={{
                     bg: 'mossyRock.900',
-                  }}>
+                  }}
+                  type="submit">
                   Submit
                   </Button>
                 </form>
@@ -114,4 +115,3 @@ export default function Login(props) {
         </Box>
       </LoginStyles>
     );
-  };
