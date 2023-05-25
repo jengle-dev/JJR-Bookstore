@@ -8,11 +8,11 @@ const bodyParser = require('body-parser');
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
+const app = express();
 // bodyParser.json is now deprecated. express.json uses middleware to parse JSON data from API calls and HTTP requests.
 app.use(express.json());
 
 const PORT = process.env.PORT || 3001;
-const app = express();
 const server = new ApolloServer({
   introspection: true,
   typeDefs,
