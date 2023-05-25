@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
-import { Box, Button, Heading, Input } from "@chakra-ui/react";
+import { Box, Button, Heading, Input, Text } from "@chakra-ui/react";
 import styled from 'styled-components';
 
 import Auth from '../utils/auth';
@@ -33,7 +33,6 @@ export default function Login(props) {
   // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
-
     setFormState({
       ...formState,
       [name]: value,
@@ -43,22 +42,16 @@ export default function Login(props) {
   // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    console.log(formState);
     try {
-      const { data } = await login({
-        variables: { ...formState },
+      console.log("Handling form submit...");
+      const mutationResponse = await login({
+        variables: { email: formState.email, password: formState.password },
       });
-
-      Auth.login(data.login.token);
+      const token = mutationResponse.data.login.token;
+      Auth.login(token);
     } catch (e) {
-      console.error(e);
+      console.log(e);
     }
-
-    // clear form values
-    setFormState({
-      email: '',
-      password: '',
-    });
   };
 
   return (
@@ -109,7 +102,7 @@ export default function Login(props) {
   
               {error && (
                 <Box>
-                  {error.message}
+                  <Text>{error.message}</Text>
                 </Box>
               )}
             </Box>
