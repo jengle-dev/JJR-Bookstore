@@ -91,10 +91,13 @@ export default function ContactForm() {
           color={'ivoryGoddess.900'}
           _hover={{
           bg: 'mossyRock.900',
-          }}>
+          }}
+          >
           Submit
         </Button>
       </FormStyle>
     </>
   );
 }
+
+// need to add type="submit" to button component and then a display for when the message is sent, which should then refresh the page after a few seconds

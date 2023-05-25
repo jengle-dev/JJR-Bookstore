@@ -29,6 +29,7 @@ const Signup = () => {
     email: '',
     password: '',
   });
+  
   const [addUser, { error, data }] = useMutation(ADD_USER);
 
   const handleChange = (event) => {
@@ -108,7 +109,8 @@ const Signup = () => {
                   color={'ivoryGoddess.900'}
                   _hover={{
                     bg: 'mossyRock.900',
-                  }}>
+                  }}
+                  type="submit">
                   Submit
                   </Button>
               </Box>
