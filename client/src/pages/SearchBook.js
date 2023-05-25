@@ -40,7 +40,7 @@ export const SearchBooks = () => {
       // Open Library API call
       const openLibReply =  fetch(
         `https://openlibrary.org/search.json?q=${searchInput}`
-      );
+      ).then((response) => response.json()).catch((err) => { console.log(err); });
 
       // Searches Open Library for an ISBN that matches the title search. If nothing is found, then a new error is thrown.
       if (!openLibReply.ok) {
