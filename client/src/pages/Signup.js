@@ -15,7 +15,8 @@ background-color: var(--ecruPrincess);
 padding: 4rem;
 Input {
   color: var(--licorice);
-  background-color: var(--ecruPrincess);
+  background-color: var(--ivoryGoddess);
+  margin: 1rem;
 }
 Button {
   margin-top: 1rem;
@@ -56,12 +57,11 @@ const Signup = () => {
 
   return (
     <SignUpStyles>
-    <Box display="flex" justifyContent="center" marginBottom="4">
-      <Box backgroundColor="ivoryGoddess.900" width="100%" maxWidth="lg">
-        <Box borderWidth="1px" borderRadius="md" overflow="hidden">
+    <Box display="flex" justifyContent="center" marginBottom="8">
+      <Box backgroundColor="ecruPrincess.900" width="100%" maxWidth="lg">
           <Heading
             as="h4"
-            color="mossyRock.900"
+            color="oliveCoat.900"
             padding="2"
           >
             Sign Up
@@ -122,7 +122,6 @@ const Signup = () => {
           </Box>
         </Box>
       </Box>
-    </Box>
     </SignUpStyles>
   );
 };
