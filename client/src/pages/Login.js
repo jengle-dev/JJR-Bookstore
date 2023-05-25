@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
@@ -25,6 +26,7 @@ Button {
 `;
 
 export default function Login(props) {
+
   const [formState, setFormState] = useState({ email: '', password: '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
@@ -90,16 +92,16 @@ export default function Login(props) {
                     value={formState.password}
                     onChange={handleChange}
                   />
-                  <br></br>
+                  <br />
                   <Button
+                  type="submit"
                   loadingText="Submitting"
                   size="lg"
-                  bg={'oliveCoat.900'}
-                  color={'ivoryGoddess.900'}
+                  bg='oliveCoat.900'
+                  color='ivoryGoddess.900'
                   _hover={{
                     bg: 'mossyRock.900',
-                  }}
-                  type="submit">
+                  }}>
                   Submit
                   </Button>
                 </form>
@@ -115,3 +117,4 @@ export default function Login(props) {
         </Box>
       </LoginStyles>
     );
+};
