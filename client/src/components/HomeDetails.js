@@ -12,8 +12,6 @@ import {
   Divider,
   SimpleGrid
 } from "@chakra-ui/react";
-import CardElementOnly from "./CardElementOnly";
-import FeaturedBooks from "./Books";
 import SingleBookCard from "./SingleBookCard.tsx";
 
 
@@ -26,40 +24,41 @@ export default function HomeDetails() {
           <HStack>
             {/* image of book on main page */}
             <Box>
-            <Image
-              mt='15px'
-              mb='15px'
-              boxSize={{ base: "185px", md: "225px", lg: "310px" }}
-              // boxSize={{ base: "50%", md: "75%", lg: "100%" }}
-              objectFit="cover"
-              src={openBookPic}
-              alt="open book - Olga Tutunara"
-              boxShadow='xl'
-              rounded='md'
-            />
+              <Image
+                mt='15px'
+                mb='15px'
+                boxSize={{ base: "185px", md: "225px", lg: "400px" }}
+                // boxSize={{ base: "50%", md: "75%", lg: "100%" }}
+                objectFit="cover"
+                minW='200px'
+                src={openBookPic}
+                alt="open book - Olga Tutunara"
+                boxShadow='xl'
+                rounded='md'
+              />
             </Box>
             <Box>
-            <Text mt="30px" p="15px" align="center" flex="wrap">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </Text>
+              <Text mt="30px" p="15px" align="center" flex="wrap" fontSize="3xl" fontWeight='800' flexShrink='-3' textColor={"licorice.900"}>
+                The only limits for tomorrow are the doubts we have today. <br />
+                ~ Pittacus Lore <br /> "The Power of Six"</Text>
             </Box>
           </HStack>
         </Container>
       </Flex>
 
       <Divider color='mossyRock.900' border='solid' />
-      
+
       <Flex as="section" className="featured" bg={"ecruPrincess.900"}>
-        <Stack direction="row">
-          <Text mt="30px" p="30px" align="center" fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
+        <Stack direction="row" flexWrap='wrap'>
+          <Text mt="30px" p="30px" align="center" textAlign='center' fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
             <h2 className="landing" align="center"> Peep your eyes at these Featured Books! </h2>
           </Text>
 
         </Stack>
       </Flex>
       {/* <FeaturedBooks /> */}
-      <Flex >
-      <SingleBookCard />
+      <Flex columnGap='5px' minW='300px' flexWrap='wrap' bg={'ecruPrincess.900'} >
+        <SingleBookCard />
       </Flex>
 
     </div>

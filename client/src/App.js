@@ -18,9 +18,10 @@ import About from './pages/About';
 // import NavMenu from './components/NavMenu';
 import Footer from './components/Footer.tsx';
 import Navbar from './components/NavBar.tsx';
-import { SearchBooks } from './pages/SearchBook';
+// import { SearchBooks } from './pages/SearchBook';
 // import FeaturedBooks from './components/Books';
 // import SingleBookCard from './components/SingleBookCard.tsx';
+// import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 
 // Extend the theme to include custom colors, fonts, etc
 // colorname.900
@@ -87,7 +88,7 @@ function App() {
       <ApolloProvider client={client}>
         <ChakraProvider theme={theme}>
           <div className="App">
-            <Navbar />
+            <Navbar className="nav" />
             <Switch>
               <Route path="/about">
                 <About />
@@ -102,7 +103,7 @@ function App() {
                 <Signup />
               </Route>
               <Route path="/search">
-                <SearchBooks />
+                {/* <SearchBooks /> */}
               </Route>
               <Route path="/">
                 <Home />
@@ -111,6 +112,12 @@ function App() {
               </Route>
             </Switch>
           </div>
+                {/* <!-- Floating Action Button --> */}
+    {/* <div class="fixed-action-btn">
+        <a class="btn-floating btn-large" href=".nav">
+        <ArrowCircleUpIcon color='white' bg='oliveCoat.900' />ArrowCircleUpIcon
+        </a>
+    </div> */}
           <Footer className='footer' />
         </ChakraProvider>
       </ApolloProvider>
