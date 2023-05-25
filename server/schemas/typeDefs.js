@@ -41,12 +41,12 @@ const typeDefs = gql`
     }
 
     # Items currently awaiting purchase. Items can be removed.
-    input CartItemInput {
-        _id: ID!
-        product: Product!
-        quantity: Int!
-        price: Int!
-    }
+    # input CartItemInput {
+    #     _id: ID!
+    #     product: Product!
+    #     quantity: Int!
+    #     price: Int!
+    # }
 
     # User's past purcahse data -- NICE TO HAVE. NOT A PRIORITY FOR MVP USER PROFILE.
     type Order {
@@ -68,13 +68,13 @@ const typeDefs = gql`
         quantity: Int
     }
 
-    # Sets the fields a user can update
-    input UpdateUserProfileInput {
-        username: String
-        email: String
-        password: String
-        phoneNumber: String
-    }
+    # # Sets the fields a user can update
+    # input UpdateUserProfileInput {
+    #     username: String
+    #     email: String
+    #     password: String
+    #     phoneNumber: String
+    # }
 
     # Permissible mutations the user may execute from the client side
     type Mutation {
