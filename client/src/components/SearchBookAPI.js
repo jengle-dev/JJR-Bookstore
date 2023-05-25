@@ -4,7 +4,7 @@ import { SearchBar } from './SearchBar';
 import '../index.css';
 
 // Component below searches in the OpenLibrary to return the ISBN which is the searchInput data inserted below https://openlibrary.org/search.json?q=*
-export const SearchBooks = () => {
+export const SearchBookAPI = () => {
     // create state for holding returned open library api data / ISBN
     const [searchedBooks, setSearchedBooks] = useState([]);
     // create state for holding our search field data
