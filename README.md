@@ -5,9 +5,11 @@ A retail bookstore e-commerce app with various options to interact locally.
 During KU's Full-Stack Coding Bootcamp, we discovered a shared passion for literature and wanted to embark on a daring adventure to open an online community for book lovers. Our journey serves as a testament to the transformative power of friendship, dedication, and the pursuit of dreams.
 
 ## Visuals & Links
+* <a href="https://jjr-bookstore.herokuapp.com/">Deployed Heroku App</a>
 * <a href="https://github.com/jengle-dev/JJR-Bookstore">GitHub Repository</a>
 * <a href="https://www.instagram.com/teamjjrbooks/">JJR Bookstore Instagram Account</a>
 * You can email our bookstore and receive an auto-reply that we're not really set up for business @ <a href="mailto:teamjjrbooks@gmail.com">teamjjrbooks@gmail.com</a> 
+* <a href="https://drive.google.com/file/d/1XEdTHEoxPKQC2t7ERcHkHQNyDmdBnl5s/view">Recording of App 5/24/2023</a>
 
 ### About Us Page
 ![image](https://github.com/jengle-dev/JJR-Bookstore/assets/117794203/60296585-647f-4e9c-b3f0-ca0220e262e8)
